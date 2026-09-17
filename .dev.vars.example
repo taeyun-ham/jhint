@@ -1,0 +1,3 @@
+RESEND_API_KEY=
+INQUIRY_TO_EMAILS=employee1@gmail.com,employee2@gmail.com
+INQUIRY_FROM_EMAIL=inquiry@your-verified-domain.com
