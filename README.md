@@ -5,6 +5,14 @@ JH International의 정적 React 홈페이지와 문의 이메일 발송용 Clou
 ## 구성
 
 - `/` — 회사 메인 홈페이지
+- `/about` — 회사 및 지원 대상
+- `/oem-odm` — OEM·ODM·Private Label 설명
+- `/skincare`, `/makeup`, `/sun-care`, `/hair-care`, `/body-care` — 제품군별 제조 페이지
+- `/formulation` — 처방 및 샘플 개발
+- `/packaging` — 패키징·충진·조립
+- `/moq` — MOQ 결정 요소
+- `/process` — 10단계 제조 공정
+- `/faq` — 국제 바이어 FAQ
 - `/inquiry` — 스킨케어·헤어케어·메이크업 R&D 문의 화면
 - `/api/inquiry` — Cloudflare Worker가 문의를 받아 Resend로 이메일 발송
 - `dist/` — 빌드 후 생성되는 정적 홈페이지 파일
@@ -89,12 +97,14 @@ Resend 관련 세 값은 Cloudflare 대시보드의 Worker 설정에서 Secret�
 
 ## SEO 마무리
 
-도메인이 확정되면 다음 두 곳을 수정하세요.
+사이트 도메인은 `https://jhint.kr`입니다. 도메인이 바뀌면 다음 두 곳을 수정하세요.
 
-1. `index.html`의 `og:image`를 실제 전체 주소로 변경
-2. `public/sitemap.xml.example` 안의 `YOUR-DOMAIN.com`을 실제 도메인으로 변경한 뒤 파일명을 `sitemap.xml`로 변경
+1. `index.html`, `scripts/prerender.mjs`, `public/robots.txt`, `public/sitemap.xml`의 `jhint.kr`을 새 도메인으로 변경
+2. `index.html`의 `og:image` 전체 주소 변경
 
-그 다음 Google Search Console에 사이트와 사이트맵을 등록하면 됩니다.
+Google Search Console에 사이트와 사이트맵(`https://jhint.kr/sitemap.xml`)을 등록하면 됩니다.
+
+빌드 시 각 주요 경로에 검색엔진용 제목·설명·canonical이 포함된 HTML 파일을 자동 생성합니다.
 
 ## 확인 명령
 

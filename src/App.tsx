@@ -1,22 +1,18 @@
-import { useEffect } from 'react';
-import HomePage from './HomePage';
 import InquiryPage from './InquiryPage';
+import { ContentPage, FaqPage, HomePage, NotFoundPage, ProcessPage } from './MarketingPages';
+import { pageBySlug } from './siteData';
 
-const SITE_NAME = 'JH International';
+function normalizedPath() {
+  const path = window.location.pathname.replace(/\/+$/, '');
+  return path || '/';
+}
 
 export default function App() {
-  const isInquiry = window.location.pathname.replace(/\/+$/, '') === '/inquiry';
-
-  useEffect(() => {
-    document.title = isInquiry
-      ? `Cosmetics OEM ODM R&D Inquiry | ${SITE_NAME}`
-      : `${SITE_NAME} | Korean Cosmetics OEM ODM Manufacturer`;
-
-    const description = isInquiry
-      ? 'Submit a skincare, hair care or makeup OEM/ODM product development brief to JH International in Korea.'
-      : 'Korean cosmetics OEM and ODM partner for skincare, makeup, hair care formulation, packaging, manufacturing and global export.';
-    document.querySelector('meta[name="description"]')?.setAttribute('content', description);
-  }, [isInquiry]);
-
-  return isInquiry ? <InquiryPage /> : <HomePage />;
+  const path = normalizedPath();
+  if (path === '/') return <HomePage />;
+  if (path === '/process') return <ProcessPage />;
+  if (path === '/faq') return <FaqPage />;
+  if (path === '/inquiry') return <InquiryPage />;
+  const page = pageBySlug.get(path);
+  return page ? <ContentPage page={page} /> : <NotFoundPage />;
 }
