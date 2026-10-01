@@ -1,4 +1,6 @@
 import InquiryPage from './InquiryPage';
+import LocationPage from './LocationPage';
+import { GuidePage, GuidesPage, guides } from './GuidesPage';
 import { ContentPage, FaqPage, HomePage, NotFoundPage, ProcessPage } from './MarketingPages';
 import { pageBySlug } from './siteData';
 
@@ -13,6 +15,10 @@ export default function App() {
   if (path === '/process') return <ProcessPage />;
   if (path === '/faq') return <FaqPage />;
   if (path === '/inquiry') return <InquiryPage />;
+  if (path === '/location') return <LocationPage />;
+  if (path === '/guides') return <GuidesPage />;
+  const guide = guides.find((item) => path === `/guides/${item.slug}`);
+  if (guide) return <GuidePage guide={guide} />;
   const page = pageBySlug.get(path);
   return page ? <ContentPage page={page} /> : <NotFoundPage />;
 }

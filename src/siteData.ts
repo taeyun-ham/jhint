@@ -133,7 +133,7 @@ export const marketingPages: MarketingPage[] = [
         ],
       },
     ],
-    related: ['/oem-odm', '/process', '/inquiry'],
+    related: ['/oem-odm', '/location', '/inquiry'],
   },
   {
     slug: '/oem-odm',
@@ -267,6 +267,8 @@ export const labelBySlug = new Map<string, string>([
   ['/', 'Home'],
   ...marketingPages.map((page) => [page.slug, page.navLabel] as [string, string]),
   ['/process', 'Process'],
+  ['/guides', 'Guides'],
+  ['/location', 'Location'],
   ['/faq', 'FAQ'],
   ['/inquiry', 'Inquiry'],
 ]);

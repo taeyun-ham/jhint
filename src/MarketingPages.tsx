@@ -112,6 +112,7 @@ export function HomePage() {
         <div className="faq-list">{faqs.slice(0, 5).map(([q, a], i) => <details key={q} open={i === 0}><summary><span>0{i + 1}</span>{q}<b>+</b></summary><p>{a}</p></details>)}</div>
         <a className="text-link" href="/faq">VIEW ALL FREQUENTLY ASKED QUESTIONS <ArrowUpRight size={16} /></a>
       </section>
+      <section className="guide-promo"><div><p className="eyebrow">BUYER GUIDES</p><h2>Compare your options before development begins.</h2></div><div><p>Explore OEM versus ODM, stock versus custom formulas and packaging, and the decisions behind cost and timing.</p><a className="button dark" href="/guides">EXPLORE ALL GUIDES <ArrowRight size={18} /></a></div></section>
       <QuoteBand />
     </SiteLayout>
   );

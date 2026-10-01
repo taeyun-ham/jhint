@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://jhint.kr/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://jhint.kr/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jhint.kr/location</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://jhint.kr/oem-odm</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://jhint.kr/skincare</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://jhint.kr/makeup</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -14,4 +15,13 @@
   <url><loc>https://jhint.kr/process</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://jhint.kr/faq</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://jhint.kr/inquiry</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jhint.kr/guides</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jhint.kr/guides/oem-vs-odm</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jhint.kr/guides/oem-vs-private-label</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jhint.kr/guides/stock-vs-custom-formula</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jhint.kr/guides/stock-vs-custom-packaging</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jhint.kr/guides/manufacturing-process</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jhint.kr/guides/launch-cosmetic-brand-korea</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jhint.kr/guides/cosmetic-manufacturing-cost</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jhint.kr/guides/cosmetic-development-timeline</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
