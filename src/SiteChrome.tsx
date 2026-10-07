@@ -52,7 +52,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <a className="brand" href="/" aria-label="JH International home">
-        <span>JH</span><small>INTERNATIONAL</small>
+        <img src="/logo-jh-global.svg" alt="JH International" width="248" height="64" />
       </a>
       <nav className={open ? 'open' : ''} aria-label="Main navigation">
         {primaryNav.map(([href, label]) => <a href={href} key={href}>{label}</a>)}
@@ -107,7 +107,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="footer-lead">
-        <a className="brand footer-brand" href="/"><span>JH</span><small>INTERNATIONAL</small></a>
+        <a className="brand footer-brand" href="/" aria-label="JH International home"><img src="/logo-jh-global.svg" alt="JH International" width="248" height="64" /></a>
         <p>Korean cosmetics OEM &amp; ODM product development for international beauty brands.</p>
       </div>
       <div className="footer-links">

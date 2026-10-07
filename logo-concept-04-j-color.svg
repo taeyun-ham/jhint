@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300" role="img" aria-labelledby="title desc">
+  <title id="title">JH International logo concept 04 — blue J</title>
+  <desc id="desc">The original square seal, with only the left stroke and lower curve of the J highlighted in blue.</desc>
+  <rect width="1000" height="300" rx="24" fill="#e9eeef"/>
+  <rect x="82" y="61" width="178" height="178" rx="16" fill="#202629"/>
+  <rect x="95" y="74" width="152" height="152" rx="9" fill="none" stroke="#728b98" stroke-width="1"/>
+  <path d="M126 105 V168 Q126 191 148 191 Q170 191 170 168 V105" fill="none" stroke="#f4f2ec" stroke-width="9" stroke-linecap="square"/>
+  <path d="M126 105 V168 Q126 191 148 191 Q154 191 159 188" fill="none" stroke="#78b6d5" stroke-width="9" stroke-linecap="square"/>
+  <path d="M170 148 H214 M214 105 V191" fill="none" stroke="#f4f2ec" stroke-width="9" stroke-linecap="square"/>
+  <path d="M120 211 H220" stroke="#9db5c0" stroke-width="3"/>
+  <text x="310" y="151" fill="#202629" font-family="Helvetica Neue, Arial, sans-serif" font-size="48" font-weight="400" letter-spacing="-1">JH INTERNATIONAL</text>
+  <text x="313" y="190" fill="#6f838c" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="500" letter-spacing="5">COSMETICS · OEM · ODM</text>
+</svg>

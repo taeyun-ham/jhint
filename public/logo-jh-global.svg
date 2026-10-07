@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="248" height="64" viewBox="0 0 248 64" role="img" aria-labelledby="title">
+  <title id="title">JH International</title>
+  <g fill="none" stroke="#a4b5bf">
+    <circle cx="32" cy="32" r="27" stroke-width="1.5"/>
+    <ellipse cx="32" cy="32" rx="11" ry="27" stroke-width=".8" opacity=".65"/>
+    <path d="M5 32h54" stroke-width=".8" opacity=".65"/>
+  </g>
+  <circle cx="52" cy="13" r="2.5" fill="#c8dbe4"/>
+  <text x="77" y="29" fill="#f3f1ec" font-family="Helvetica Neue, Arial, sans-serif" font-size="23" font-weight="300" letter-spacing="-0.7">JH International</text>
+  <path d="M78 38h162" stroke="#52616a" stroke-width=".8"/>
+  <text x="78" y="51" fill="#a4b5bf" font-family="Helvetica Neue, Arial, sans-serif" font-size="7" font-weight="600" letter-spacing="1.7">FROM KOREA TO THE WORLD</text>
+</svg>

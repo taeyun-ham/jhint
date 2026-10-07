@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300" role="img" aria-labelledby="title desc">
+  <title id="title">JH International — refined logo concept</title>
+  <desc id="desc">A geometric JH monogram paired with a refined International wordmark on charcoal.</desc>
+  <rect width="1000" height="300" rx="24" fill="#17191b"/>
+  <rect x="25" y="25" width="950" height="250" rx="10" fill="none" stroke="#3b444a" stroke-width="1"/>
+
+  <!-- Bespoke monogram: the J curves into a shared baseline; the H opens outward. -->
+  <g fill="none" stroke="#f3f1ec" stroke-width="11" stroke-linecap="square" stroke-linejoin="round">
+    <path d="M113 85 V177 C113 198 126 211 147 211 C168 211 181 198 181 177 V85"/>
+    <path d="M181 85 V211"/>
+    <path d="M181 149 H244"/>
+    <path d="M244 85 V211"/>
+  </g>
+  <path d="M113 67 H244" stroke="#9fb3c1" stroke-width="3"/>
+  <path d="M284 73 V227" stroke="#5c6a73" stroke-width="1"/>
+
+  <text x="325" y="151" fill="#f3f1ec" font-family="Helvetica Neue, Arial, sans-serif" font-size="68" font-weight="300" letter-spacing="-3">JH</text>
+  <text x="328" y="204" fill="#aeb9bf" font-family="Helvetica Neue, Arial, sans-serif" font-size="21" font-weight="500" letter-spacing="9">INTERNATIONAL</text>
+  <path d="M328 224 H663" stroke="#9fb3c1" stroke-width="2"/>
+</svg>

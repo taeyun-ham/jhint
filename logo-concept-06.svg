@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300" role="img" aria-labelledby="title desc">
+  <title id="title">JH International logo concept 06 — modern wordmark</title>
+  <desc id="desc">A clean architectural wordmark with a small blue-grey diamond mark.</desc>
+  <rect width="1000" height="300" rx="24" fill="#f3f1ec"/>
+  <path d="M102 150 L149 103 L196 150 L149 197 Z" fill="none" stroke="#8da4b1" stroke-width="6"/>
+  <path d="M130 144 V163 Q130 178 141 178 Q152 178 152 163 V122 M167 122 V178 M167 150 H184 M184 122 V178" fill="none" stroke="#1c2023" stroke-width="5" stroke-linecap="square"/>
+  <text x="249" y="150" fill="#1c2023" font-family="Helvetica Neue, Arial, sans-serif" font-size="58" font-weight="300" letter-spacing="-3">JH International</text>
+  <path d="M252 173 H833" stroke="#93a6b0" stroke-width="1"/>
+  <text x="254" y="205" fill="#62727b" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="6">KOREAN COSMETICS PARTNER</text>
+</svg>

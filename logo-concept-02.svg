@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300" role="img" aria-labelledby="title desc">
+  <title id="title">JH International logo concept 02 — editorial</title>
+  <desc id="desc">Elegant editorial JH initials with a small International wordmark.</desc>
+  <rect width="1000" height="300" rx="24" fill="#f3f1ec"/>
+  <path d="M50 250 H950" stroke="#c4ccd0" stroke-width="1"/>
+  <text x="80" y="194" fill="#1c2023" font-family="Didot, Bodoni MT, Times New Roman, serif" font-size="156" font-weight="400" letter-spacing="-14">JH</text>
+  <path d="M316 80 V220" stroke="#91a6b3" stroke-width="2"/>
+  <text x="354" y="142" fill="#1c2023" font-family="Helvetica Neue, Arial, sans-serif" font-size="40" font-weight="300" letter-spacing="-1">JH International</text>
+  <text x="357" y="186" fill="#6d7e89" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="5">KOREAN BEAUTY DEVELOPMENT</text>
+</svg>

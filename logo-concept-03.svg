@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300" role="img" aria-labelledby="title desc">
+  <title id="title">JH International logo concept 03 — global orbit</title>
+  <desc id="desc">A circular international mark alongside a restrained horizontal wordmark.</desc>
+  <rect width="1000" height="300" rx="24" fill="#171a1c"/>
+  <circle cx="164" cy="150" r="90" fill="none" stroke="#a4b5bf" stroke-width="2"/>
+  <ellipse cx="164" cy="150" rx="37" ry="90" fill="none" stroke="#5d707b" stroke-width="1.5"/>
+  <path d="M74 150 H254" stroke="#5d707b" stroke-width="1.5"/>
+  <circle cx="231" cy="88" r="7" fill="#c8dbe4"/>
+  <text x="303" y="148" fill="#f3f1ec" font-family="Helvetica Neue, Arial, sans-serif" font-size="47" font-weight="300" letter-spacing="0">JH International</text>
+  <path d="M306 174 H839" stroke="#52616a" stroke-width="1"/>
+  <text x="306" y="208" fill="#a4b5bf" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="4">FROM KOREA TO THE WORLD</text>
+</svg>
