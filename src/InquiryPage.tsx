@@ -2,7 +2,7 @@ import InquiryForm from './InquiryForm';
 import { Breadcrumbs, SiteLayout, usePageMeta } from './SiteChrome';
 
 export default function InquiryPage() {
-  usePageMeta('Request a Korean Cosmetics OEM ODM Quotation | JH International', 'Submit a skincare, hair care or makeup OEM/ODM product development brief to JH International in South Korea.', '/inquiry');
+  usePageMeta('Request a Korean Cosmetics OEM ODM Quotation | JH International', 'Submit a skin care, makeup, or hair and body care OEM/ODM product development brief to JH International in South Korea.', '/inquiry');
   return (
     <SiteLayout>
       <div className="inquiry-page">

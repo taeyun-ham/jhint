@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 108">
+  <rect x="1" y="1" width="158" height="106" rx="11" fill="#20282b" stroke="#78919e"/>
+  <circle cx="80" cy="47" r="28" fill="none" stroke="#f5f5f2" stroke-width="2"/>
+  <path d="M52 47h56M80 19c-11 13-11 43 0 56m0-56c11 13 11 43 0 56" fill="none" stroke="#aabac6" stroke-width="1.5"/>
+  <path d="m71 47 6 6 12-13" fill="none" stroke="#d3f05f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="80" y="96" fill="#f5f5f2" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="2" text-anchor="middle">EU COMPLIANCE</text>
+</svg>

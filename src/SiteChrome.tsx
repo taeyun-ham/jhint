@@ -1,19 +1,12 @@
 import { useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-import { ArrowRight, ArrowUpRight, Menu, X } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
 import { labelBySlug } from './siteData';
 
 const primaryNav = [
-  ['/about', 'Company'],
-  ['/oem-odm', 'OEM / ODM'],
-  ['/skincare', 'Skincare'],
-  ['/makeup', 'Makeup'],
-  ['/sun-care', 'Sun Care'],
-  ['/hair-care', 'Hair Care'],
-  ['/body-care', 'Body Care'],
-  ['/process', 'Process'],
-  ['/guides', 'Guides'],
-  ['/location', 'Location'],
+  { label: 'COMPANY', links: [['/about', 'ABOUT'], ['/compliance', 'COMPLIANCE'], ['/location', 'LOCATION']] },
+  { label: 'OEM/ODM', links: [['/oem-odm', 'OEM / ODM'], ['/process', 'PROCESS']] },
+  { label: 'PRODUCTS', links: [['/skincare', 'SKIN CARE'], ['/makeup', 'MAKE UP'], ['/sun-care', 'SUN CARE'], ['/hair-care', 'HAIR CARE'], ['/body-care', 'BODY CARE']] },
 ] as const;
 
 export function usePageMeta(title: string, description: string, path: string, schema?: Record<string, unknown>) {
@@ -54,12 +47,17 @@ export function SiteHeader() {
       <a className="brand" href="/" aria-label="JH International home">
         <img src="/logo-jh-global.svg" alt="JH International" width="248" height="64" />
       </a>
-      <nav className={open ? 'open' : ''} aria-label="Main navigation">
-        {primaryNav.map(([href, label]) => <a href={href} key={href}>{label}</a>)}
-        <a className="mobile-only" href="/faq">FAQ</a>
-        <a className="mobile-only" href="/inquiry">Request a quote</a>
+      <nav className={`primary-nav${open ? ' open' : ''}`} aria-label="Main navigation">
+        {primaryNav.map(({ label, links }) => (
+          <details className="nav-group" key={label}>
+            <summary>{label}<ChevronDown size={14} aria-hidden="true" /></summary>
+            <div className="nav-submenu">
+              {links.map(([href, linkLabel]) => <a href={href} key={href}>{linkLabel}</a>)}
+            </div>
+          </details>
+        ))}
+        <a className="nav-direct" href="/inquiry">INQUIRY</a>
       </nav>
-      <a className="header-cta" href="/inquiry">REQUEST A QUOTE <ArrowUpRight size={15} /></a>
       <button className="menu-button" type="button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen(!open)}>
         {open ? <X /> : <Menu />}
       </button>
@@ -113,7 +111,7 @@ export function SiteFooter() {
       <div className="footer-links">
         <div><strong>CAPABILITIES</strong><a href="/oem-odm">OEM / ODM</a><a href="/formulation">Formulation</a><a href="/packaging">Packaging</a><a href="/moq">MOQ</a></div>
         <div><strong>CATEGORIES</strong><a href="/skincare">Skincare</a><a href="/makeup">Makeup</a><a href="/sun-care">Sun Care</a><a href="/hair-care">Hair Care</a><a href="/body-care">Body Care</a></div>
-        <div><strong>COMPANY</strong><a href="/about">About</a><a href="/location">Location</a><a href="/process">Process</a><a href="/guides">Guides</a><a href="/faq">FAQ</a><a href="/inquiry">Inquiry</a></div>
+        <div><strong>COMPANY</strong><a href="/about">About</a><a href="/location">Location</a><a href="/process">Process</a><a href="/compliance">Compliance</a><a href="/guides">Guides</a><a href="/faq">FAQ</a><a href="/inquiry">Inquiry</a></div>
       </div>
       <div className="footer-bottom"><span>© {new Date().getFullYear()} JH INTERNATIONAL</span><a href="/location">D-1311, 30 Songdo Mirae-ro, Incheon, South Korea</a><a href="#top">BACK TO TOP ↑</a></div>
     </footer>

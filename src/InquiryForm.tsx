@@ -5,9 +5,9 @@ import { ArrowRight, Check, FileUp, LoaderCircle } from 'lucide-react';
 type Category = 'skincare' | 'hair-care' | 'makeup';
 
 const categories: Array<{ value: Category; label: string; sub: string }> = [
-  { value: 'skincare', label: 'SKINCARE', sub: 'Skin & personal care' },
-  { value: 'hair-care', label: 'HAIR CARE', sub: 'Hair & scalp care' },
+  { value: 'skincare', label: 'SKIN CARE', sub: 'Skin & personal care' },
   { value: 'makeup', label: 'MAKEUP', sub: 'Colour cosmetics' },
+  { value: 'hair-care', label: 'HAIR & BODY CARE', sub: 'Hair, scalp & body care' },
 ];
 
 const common = {
@@ -36,19 +36,19 @@ const categoryFields = {
     packagingDetail: ['Stock', 'Custom', 'Client Supplied', 'Open to Recommendation'],
   },
   'hair-care': {
-    productTypes: ['Shampoo', 'Conditioner', 'Hair Mask', 'Treatment', 'Leave-in', 'Hair Serum', 'Hair Oil', 'Scalp Treatment', 'Styling', 'Heat Protectant', 'Other'],
-    profileTitle: 'HAIR & SCALP PROFILE',
+    productTypes: ['Shampoo', 'Conditioner', 'Hair Mask', 'Treatment', 'Leave-in', 'Hair Serum', 'Hair Oil', 'Scalp Treatment', 'Styling', 'Heat Protectant', 'Body Wash', 'Body Lotion', 'Body Cream', 'Body Oil', 'Body Scrub', 'Hand Care', 'Deodorant', 'Other'],
+    profileTitle: 'HAIR, SCALP & BODY PROFILE',
     profiles: [
-      ['Hair type', 'hair_type', ['Fine', 'Thick', 'Straight', 'Wavy', 'Curly', 'Coily', 'Coloured', 'Bleached', 'Damaged', 'All Hair']],
-      ['Scalp type / concern', 'scalp_concern', ['Normal', 'Dry', 'Oily', 'Sensitive', 'Flaky', 'Itchy', 'Other']],
-      ['Primary objective', 'primary_objective', ['Moisture', 'Repair', 'Strength', 'Smoothness', 'Shine', 'Volume', 'Frizz Control', 'Scalp Care', 'Colour Protection', 'Other']],
+      ['Target area', 'target_area', ['Hair', 'Scalp', 'Body', 'Hair & Body']],
+      ['Hair / skin profile', 'hair_skin_profile', ['Fine Hair', 'Thick Hair', 'Coloured Hair', 'Damaged Hair', 'Dry Scalp', 'Oily Scalp', 'Dry Skin', 'Sensitive Skin', 'All Types', 'Other']],
+      ['Primary objective', 'primary_objective', ['Moisture', 'Repair', 'Strength', 'Smoothness', 'Shine', 'Volume', 'Frizz Control', 'Scalp Care', 'Colour Protection', 'Cleansing', 'Exfoliation', 'Body Hydration', 'Other']],
     ],
     formula: [
       ['Texture', 'texture', ['Liquid', 'Gel', 'Cream', 'Rich Mask', 'Oil', 'Serum', 'Mist', 'Foam', 'Other']],
       ['Performance', 'performance', ['Fast Rinse', 'Low Residue', 'Long-lasting Fragrance', 'Heat Protection', 'Anti-frizz', 'Detangling', 'Softening', 'Other']],
       ['Preferences', 'preferences', ['Vegan', 'Natural-derived', 'Silicone-free', 'Sulfate-free', 'Paraben-free', 'Fragrance-free', 'Colourant-free', 'Other']],
     ],
-    packaging: ['Bottle', 'Pump', 'Tube', 'Jar', 'Sachet', 'Spray', 'Dropper', 'Other'],
+    packaging: ['Bottle', 'Pump', 'Tube', 'Jar', 'Sachet', 'Spray', 'Dropper', 'Airless', 'Stick', 'Other'],
     packagingDetailLabel: 'Dispensing preference',
     packagingDetailName: 'dispensing_preference',
     packagingDetail: ['Flip Cap', 'Pump', 'Foaming Pump', 'Spray', 'Dropper', 'Open to Recommendation'],
@@ -132,7 +132,7 @@ export default function InquiryForm() {
     setStatus(null);
     const form = event.currentTarget;
     const body = new FormData(form);
-    body.set('category', category);
+    body.set('category', category === 'hair-care' ? 'hair & body care' : category);
 
     try {
       const response = await fetch('/api/inquiry', { method: 'POST', body });

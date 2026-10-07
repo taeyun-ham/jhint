@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 108">
+  <rect x="1" y="1" width="158" height="106" rx="11" fill="#20282b" stroke="#78919e"/>
+  <path d="M52 34h56v40H52z" fill="none" stroke="#f5f5f2" stroke-width="2"/>
+  <path d="M63 44h34M63 52h34M63 60h22" stroke="#aabac6" stroke-width="2"/>
+  <circle cx="102" cy="68" r="12" fill="#20282b" stroke="#d3f05f" stroke-width="2"/>
+  <path d="m96 68 4 4 7-8" fill="none" stroke="#d3f05f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="80" y="96" fill="#f5f5f2" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="2" text-anchor="middle">US REGULATORY</text>
+</svg>

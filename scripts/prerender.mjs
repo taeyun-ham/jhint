@@ -13,6 +13,7 @@ const routes = [
   ['packaging', 'Cosmetic Packaging, Filling & Assembly Korea | JH International', 'Cosmetic packaging selection, filling and assembly in Korea for international beauty product projects.'],
   ['moq', 'Korean Cosmetics MOQ Explained | JH International', 'Learn what determines Korean cosmetics OEM and ODM MOQ, including formula, shades, packaging and production conditions.'],
   ['process', 'Korean Cosmetics Manufacturing Process | JH International', 'Follow the 10-step Korean cosmetics OEM and ODM process from consultation to inspection and export preparation.'],
+  ['compliance', 'Cosmetics Quality & Compliance Approach | JH International', 'Learn how JH International approaches manufacturing controls, product testing, market requirements and project documentation for Korean cosmetics OEM and ODM projects.'],
   ['faq', 'Korean Cosmetics OEM ODM FAQ | JH International', 'Answers about Korean cosmetics OEM and ODM, MOQ, formulas, samples, private label, packaging, export and quotations.'],
   ['inquiry', 'Request a Korean Cosmetics OEM ODM Quotation | JH International', 'Submit a skincare, hair care or makeup OEM/ODM product development brief to JH International in South Korea.'],
   ['location', 'JH International Location in Songdo, Incheon | Visit Us', 'Find JH International at D-1311, 30 Songdo Mirae-ro, Yeonsu-gu, Incheon, South Korea. View the address and open directions.'],

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 108">
+  <rect x="1" y="1" width="158" height="106" rx="11" fill="#20282b" stroke="#78919e"/>
+  <path d="M50 71V37h60v34M45 71h70M62 46h36M62 55h36M62 64h20" fill="none" stroke="#f5f5f2" stroke-width="2" stroke-linecap="round"/>
+  <path d="m70 27 6 6 14-15" fill="none" stroke="#d3f05f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="80" y="96" fill="#f5f5f2" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1.5" text-anchor="middle">KOREA DOCUMENTS</text>
+</svg>

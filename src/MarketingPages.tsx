@@ -12,23 +12,23 @@ const capabilities = [
 
 const manufacturingImages = [
   { number: '03', title: 'Factory exterior', description: 'Korean cosmetics manufacturing facility and production environment.', src: '/images/manufacturing/korean-cosmetics-oem-manufacturer-factory.webp', alt: 'Modern Korean cosmetics OEM manufacturing facility exterior' },
-  { number: '04', title: 'Mixing & production', description: 'Stainless-steel mixing tanks and clean cosmetics production equipment.', src: '/images/manufacturing/korean-cosmetics-mixing-tank-korea.webp', alt: 'Stainless steel cosmetic formulation mixing tanks in a clean production facility' },
-  { number: '05', title: 'Filling line', description: 'Precision cosmetic filling for bottles, tubes, jars and other formats.', src: '/images/manufacturing/korean-cosmetics-filling-machine-korea.webp', alt: 'Automated Korean cosmetics filling line operating with cosmetic containers' },
-  { number: '06', title: 'Packaging line', description: 'Packaging, labelling, coding and finished-product assembly.', src: '/images/manufacturing/korean-cosmetics-packaging-line-korea.webp', alt: 'Cosmetics packaging and finished product assembly line' },
-  { number: '07', title: 'Quality control', description: 'Inspection of bulk formulas, components and finished cosmetic products.', src: '/images/manufacturing/korean-cosmetics-quality-control-korea.webp', alt: 'Quality control specialist inspecting cosmetic products in a laboratory' },
+  { number: '04', title: 'Mixing & production', description: 'Stainless-steel mixing tanks and clean cosmetics production equipment.', src: '/images/manufacturing/korean-cosmetics-mixing-tank-korea-v5.webp', alt: 'Stainless steel cosmetic formulation mixing tanks in a clean production facility' },
+  { number: '05', title: 'Filling line', description: 'Precision cosmetic filling for bottles, tubes, jars and other formats.', src: '/images/manufacturing/korean-cosmetics-filling-machine-korea-v3.webp', alt: 'Automated Korean cosmetics filling line operating with four matching nozzles and connected supply hoses' },
+  { number: '06', title: 'Packaging line', description: 'Packaging, labelling, coding and finished-product assembly.', src: '/images/manufacturing/korean-cosmetics-packaging-line-korea-v6.webp', alt: 'One worker placing a cosmetic jar into a snug retail carton on a uniform-width packaging conveyor' },
+  { number: '07', title: 'Quality control', description: 'Inspection of bulk formulas, components and finished cosmetic products.', src: '/images/manufacturing/korean-cosmetics-quality-control-korea-v2.webp', alt: 'Masked quality control specialist inspecting cosmetic products in a windowless laboratory' },
   { number: '08', title: 'Finished products', description: 'Finished products, packaging components and export-ready cartons.', src: '/images/manufacturing/korean-cosmetics-finished-products-korea.webp', alt: 'Finished cosmetic products and export-ready packaging cartons' },
 ];
 
 const pageHeroImages: Record<string, string> = {
   '/about': '/images/manufacturing/korean-cosmetics-oem-manufacturer-factory.webp',
-  '/oem-odm': '/images/manufacturing/korean-cosmetics-mixing-tank-korea.webp',
+  '/oem-odm': '/images/manufacturing/korean-cosmetics-mixing-tank-korea-v5.webp',
   '/skincare': '/images/categories/korean-skincare-oem-hero.webp',
   '/makeup': '/images/categories/korean-makeup-oem-hero.webp',
   '/sun-care': '/images/categories/korean-sun-care-oem-hero.webp',
   '/hair-care': '/images/categories/korean-hair-care-oem-hero.webp',
   '/body-care': '/images/categories/korean-body-care-oem-hero.webp',
-  '/formulation': '/images/manufacturing/korean-skincare-oem-formulation-laboratory.webp',
-  '/packaging': '/images/manufacturing/korean-cosmetics-packaging-line-korea.webp',
+  '/formulation': '/images/manufacturing/korean-skincare-oem-formulation-laboratory-v2.webp',
+  '/packaging': '/images/manufacturing/korean-cosmetics-packaging-line-korea-v6.webp',
   '/moq': '/images/manufacturing/korean-cosmetics-finished-products-korea.webp',
 };
 
@@ -40,7 +40,7 @@ function EvidenceImage({ number, title, description, src, alt, className = '' }:
   return (
     <figure className={`evidence-image ${className}`}>
       <img src={src} alt={alt} loading="lazy" width="1672" height="940" />
-      <figcaption><span>IMAGE {number} · CONCEPT IMAGE</span><strong>{title}</strong><p>{description}</p></figcaption>
+      <figcaption><strong>{title}</strong><p>{description}</p></figcaption>
     </figure>
   );
 }
@@ -68,7 +68,7 @@ export function HomePage() {
           <p>Complete Korean cosmetics product development for international beauty brands—from formulation and samples to packaging, filling, assembly and export-ready finished products.</p>
           <div className="hero-actions"><a className="button dark" href="/inquiry">REQUEST OEM / ODM CONSULTATION <ArrowRight size={18} /></a><a className="text-link" href="/process">EXPLORE THE PROCESS <ArrowUpRight size={16} /></a></div>
         </div>
-        <div className="home-hero-visual" role="img" aria-label="JH International premium cosmetic packaging concept"><span>KOREAN BEAUTY · GLOBAL PROJECTS</span></div>
+        <div className="home-hero-visual" role="img" aria-label="JH International premium cosmetic packaging concept" />
       </section>
 
       <section className="positioning-section">
@@ -92,7 +92,7 @@ export function HomePage() {
       </section>
 
       <section className="rnd-section" id="rnd-image">
-        <div className="rnd-panel"><EvidenceImage number="02" title="Korean cosmetic R&D laboratory" description="Formula research, ingredient evaluation and sample preparation for beauty product development." src="/images/manufacturing/korean-skincare-oem-formulation-laboratory.webp" alt="Cosmetic formulation scientist working in a modern Korean research laboratory" className="rnd-image" /></div>
+        <div className="rnd-panel"><EvidenceImage number="02" title="Korean cosmetic R&D laboratory" description="Formula research, ingredient evaluation and sample preparation for beauty product development." src="/images/manufacturing/korean-skincare-oem-formulation-laboratory-v2.webp" alt="Masked cosmetic formulation scientist working in a modern Korean research laboratory" className="rnd-image" /></div>
         <div className="rnd-copy"><p>Good development balances brand positioning with the realities of formula, packaging, quantity, timing and destination market.</p><ul><li><Check />Brief and benchmark review</li><li><Check />Formula and prototype direction</li><li><Check />Sample feedback and revisions</li><li><Check />Packaging compatibility considerations</li></ul><a className="button dark" href="/formulation">FORMULATION DEVELOPMENT <ArrowRight size={18} /></a></div>
       </section>
 
@@ -128,7 +128,6 @@ export function ContentPage({ page }: { page: MarketingPage }) {
           <p className="eyebrow">{page.eyebrow}</p>
           <h1>{page.title}<br /><em>{page.accent}</em></h1>
           <p className="page-intro">{page.intro}</p>
-          <span className="page-hero-image-note">VISUAL CONCEPT</span>
         </header>
 
         {page.products && <section className="format-section"><div><p className="eyebrow">PRODUCT FORMATS</p><h2>Formats we can discuss for your brief.</h2><p>Availability and development route depend on the formula, packaging, market and project scope.</p></div><ul>{page.products.map((product, i) => <li key={product}><span>{String(i + 1).padStart(2, '0')}</span>{product}</li>)}</ul></section>}
@@ -152,7 +151,7 @@ export function ContentPage({ page }: { page: MarketingPage }) {
 export function ProcessPage() {
   usePageMeta('Korean Cosmetics Manufacturing Process | JH International', 'Follow the 10-step Korean cosmetics OEM and ODM process from consultation and formula development to packaging, production, inspection and export.', '/process');
   return (
-    <SiteLayout><article className="content-page"><header className="page-hero has-background" style={pageHeroStyle('/images/manufacturing/korean-cosmetics-filling-machine-korea.webp')}><Breadcrumbs current="Process" /><p className="eyebrow">KOREAN COSMETICS MANUFACTURING PROCESS</p><h1>From first conversation<br /><em>to export preparation.</em></h1><p className="page-intro">A transparent 10-step process helps international buyers understand what happens next, what decisions are required and where project-specific confirmation is needed.</p><span className="page-hero-image-note">VISUAL CONCEPT</span></header>
+    <SiteLayout><article className="content-page"><header className="page-hero has-background" style={pageHeroStyle('/images/manufacturing/korean-cosmetics-filling-machine-korea-v3.webp')}><Breadcrumbs current="Process" /><p className="eyebrow">KOREAN COSMETICS MANUFACTURING PROCESS</p><h1>From first conversation<br /><em>to export preparation.</em></h1><p className="page-intro">A transparent 10-step process helps international buyers understand what happens next, what decisions are required and where project-specific confirmation is needed.</p></header>
       <section className="process-page-grid">{processSteps.map(([number, title, body]) => <article key={number}><div><span>{number}</span><CircleDot /></div><h2>{title}</h2><p>{body}</p></article>)}</section>
       <RelatedLinks slugs={['/oem-odm', '/formulation', '/packaging', '/moq']} /><QuoteBand compact />
     </article></SiteLayout>
@@ -164,7 +163,7 @@ export function FaqPage() {
     '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(([question, answer]) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })),
   });
   return (
-    <SiteLayout><article className="content-page"><header className="page-hero has-background" style={pageHeroStyle('/images/manufacturing/korean-cosmetics-quality-control-korea.webp')}><Breadcrumbs current="FAQ" /><p className="eyebrow">KOREAN COSMETICS OEM / ODM FAQ</p><h1>What international buyers<br /><em>need to know.</em></h1><p className="page-intro">Clear starting answers about development, MOQ, samples, packaging, manufacturing and export-related project planning.</p><span className="page-hero-image-note">VISUAL CONCEPT</span></header>
+    <SiteLayout><article className="content-page"><header className="page-hero has-background" style={pageHeroStyle('/images/manufacturing/korean-cosmetics-quality-control-korea-v2.webp')}><Breadcrumbs current="FAQ" /><p className="eyebrow">KOREAN COSMETICS OEM / ODM FAQ</p><h1>What international buyers<br /><em>need to know.</em></h1><p className="page-intro">Clear starting answers about development, MOQ, samples, packaging, manufacturing and export-related project planning.</p></header>
       <section className="faq-page-list">{faqs.map(([q, a], i) => <details key={q} open={i === 0}><summary><span>{String(i + 1).padStart(2, '0')}</span><h2>{q}</h2><b>+</b></summary><p>{a}</p></details>)}</section>
       <RelatedLinks slugs={['/oem-odm', '/moq', '/process', '/inquiry']} /><QuoteBand compact />
     </article></SiteLayout>
