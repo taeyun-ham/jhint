@@ -28,6 +28,7 @@ img { max-width: 100%; }
 .button.acid:hover { background: white; }
 
 .site-header { height: 100px; padding: 0 clamp(24px, 4.4vw, 76px); display: grid; grid-template-columns: 1fr auto; align-items: center; background: var(--ink); color: white; border-bottom: 1px solid var(--light-line); position: relative; z-index: 50; }
+.scroll-to-top { display: none; }
 .brand { width: fit-content; display: inline-flex; align-items: center; }
 .brand img { display: block; width: 248px; height: 64px; max-width: 100%; }
 .site-header .primary-nav { height: 100%; display: flex; align-items: stretch; gap: clamp(26px, 2.7vw, 48px); }
@@ -349,6 +350,8 @@ img { max-width: 100%; }
 }
 
 @media (max-width: 760px) {
+  .scroll-to-top { position: fixed; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom)); z-index: 60; width: 48px; height: 48px; display: grid; place-items: center; border: 1px solid var(--light-line); border-radius: 50%; background: var(--ink); color: white; box-shadow: 0 6px 24px rgba(0, 0, 0, .24); cursor: pointer; }
+  .scroll-to-top:focus-visible { outline: 3px solid var(--acid); outline-offset: 3px; }
   .site-header { height: 84px; padding-inline: 20px; }
   .site-header .primary-nav { max-height: calc(100vh - 84px); }
   .site-header .brand img { width: 210px; height: auto; }

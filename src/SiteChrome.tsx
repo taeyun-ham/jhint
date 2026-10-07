@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-import { ArrowRight, ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
+import { ArrowRight, ArrowUp, ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
 import { labelBySlug } from './siteData';
 
 const primaryNav = [
@@ -118,6 +118,34 @@ export function SiteFooter() {
   );
 }
 
+function ScrollToTop() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const updateVisibility = () => setVisible(window.scrollY > 400);
+    updateVisibility();
+    window.addEventListener('scroll', updateVisibility, { passive: true });
+    return () => window.removeEventListener('scroll', updateVisibility);
+  }, []);
+
+  if (!visible) return null;
+
+  return (
+    <button
+      className="scroll-to-top"
+      type="button"
+      aria-label="Back to top"
+      title="Back to top"
+      onClick={() => window.scrollTo({
+        top: 0,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      })}
+    >
+      <ArrowUp size={22} aria-hidden="true" />
+    </button>
+  );
+}
+
 export function SiteLayout({ children }: { children: ReactNode }) {
-  return <><SiteHeader /><main id="top">{children}</main><SiteFooter /></>;
+  return <><SiteHeader /><main id="top">{children}</main><SiteFooter /><ScrollToTop /></>;
 }
