@@ -50,7 +50,7 @@ export default function CompliancePage() {
           <div className="compliance-review" aria-label="Compliance review areas">
             {reviewAreas.map((area) => (
               <section key={area.title}>
-                <img src={area.image} alt="" width="160" height="108" />
+                <img src={area.image} alt={`${area.title} compliance illustration`} width="160" height="108" />
                 <h2>{area.title}</h2>
                 <p>{area.description}</p>
               </section>
