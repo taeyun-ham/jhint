@@ -93,7 +93,7 @@ export const seoPages: Record<string, { title: string; description: string }> = 
     "description": "Learn how a Korean cosmetics project moves from brief and samples to production, inspection and export preparation with JH International."
   },
   "/guides/launch-cosmetic-brand-korea": {
-    "title": "How to Launch a Cosmetic Brand with Korean Manufacturing | JH International",
+    "title": "Launch a Cosmetic Brand with Korean Manufacturing | JH International",
     "description": "Build a product brief and plan formulation, packaging, approvals and production for a Korean-made cosmetics launch with JH International."
   },
   "/guides/cosmetic-manufacturing-cost": {
