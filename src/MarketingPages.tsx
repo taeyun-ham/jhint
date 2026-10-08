@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import type { CSSProperties } from 'react';
-import { ArrowRight, ArrowUpRight, Check, CircleDot, Globe2, PackageCheck, ShieldCheck } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Check, CircleDot, ClipboardCheck, Lightbulb, Droplets, Boxes, Factory, Truck, SoapDispenserDroplet, MessageCircle, Globe2, PackageCheck, ShieldCheck } from 'lucide-react';
 import { Breadcrumbs, QuoteBand, RelatedLinks, SiteLayout, usePageMeta } from './SiteChrome';
 import { categories, faqs, processSteps, type MarketingPage } from './siteData';
 
@@ -148,11 +149,41 @@ export function ContentPage({ page }: { page: MarketingPage }) {
   );
 }
 
+const processIcons = [
+  MessageCircle, Lightbulb, Droplets, SoapDispenserDroplet, Boxes,
+  ShieldCheck, Factory, PackageCheck, ClipboardCheck, Truck,
+];
+
 export function ProcessPage() {
+  const [expandedStep, setExpandedStep] = useState<string | null>(null);
   usePageMeta('Korean Cosmetics Manufacturing Process | JH International', 'Follow the 10-step Korean cosmetics OEM and ODM process from consultation and formula development to packaging, production, inspection and export.', '/process');
   return (
     <SiteLayout><article className="content-page"><header className="page-hero has-background" style={pageHeroStyle('/images/manufacturing/korean-cosmetics-filling-machine-korea-v3.webp')}><Breadcrumbs current="Process" /><p className="eyebrow">KOREAN COSMETICS MANUFACTURING PROCESS</p><h1>From first conversation<br /><em>to export preparation.</em></h1><p className="page-intro">A transparent 10-step process helps international buyers understand what happens next, what decisions are required and where project-specific confirmation is needed.</p></header>
-      <section className="process-page-grid">{processSteps.map(([number, title, body]) => <article key={number}><div><span>{number}</span><CircleDot /></div><h2>{title}</h2><p>{body}</p></article>)}</section>
+      <section className="process-stages" aria-labelledby="process-stages-title">
+        <header className="process-stages-heading">
+          <p className="eyebrow">10 STEPS / OEM &amp; ODM</p>
+          <h2 id="process-stages-title">Our manufacturing process</h2>
+        </header>
+      <ol className="process-diagram" aria-label="OEM / ODM manufacturing stages">
+        {processSteps.map(([number, title, body], index) => {
+          const Icon = processIcons[index];
+          return (
+          <li key={title}>
+            <div className="process-card" data-expanded={expandedStep === number}>
+              <button className="process-card-trigger" type="button" aria-expanded={expandedStep === number} aria-controls={`process-description-${number}`} aria-describedby={`process-description-${number}`} onClick={() => setExpandedStep(expandedStep === number ? null : number)}>
+                <span className="process-step-number">STEP {number}</span>
+                <span className="process-icon"><Icon size={48} strokeWidth={1.5} aria-hidden="true" /></span>
+                <span className="process-card-title">{title}</span>
+                <span className="process-detail-hint">VIEW DETAILS <ArrowUpRight size={13} aria-hidden="true" /></span>
+              </button>
+              <p className="process-description" id={`process-description-${number}`}>{body}</p>
+            </div>
+            {index < processSteps.length - 1 && <ArrowRight className="process-connector" size={18} aria-hidden="true" />}
+          </li>
+          );
+        })}
+      </ol>
+      </section>
       <RelatedLinks slugs={['/oem-odm', '/formulation', '/packaging', '/moq']} /><QuoteBand compact />
     </article></SiteLayout>
   );

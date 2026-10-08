@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { ReactNode, SyntheticEvent } from 'react';
-import { ArrowRight, Check, FileUp, LoaderCircle } from 'lucide-react';
+import { ArrowRight, Check, LoaderCircle } from 'lucide-react';
 
 type Category = 'skincare' | 'hair-care' | 'makeup';
 
@@ -11,63 +11,13 @@ const categories: Array<{ value: Category; label: string; sub: string }> = [
 ];
 
 const common = {
-  referenceType: ['Photo / Image', 'Physical Sample', 'INCI / Formula', 'Product Link'],
   price: ['Mass', 'Mid', 'Premium', 'Luxury'],
-  markets: ['EU', 'UK', 'USA', 'Australia', 'Korea', 'Middle East', 'Asia', 'Other'],
 };
 
 const categoryFields = {
-  skincare: {
-    productTypes: ['Cleanser', 'Toner', 'Essence', 'Serum', 'Ampoule', 'Emulsion', 'Cream', 'Gel', 'Mask', 'Eye Care', 'Oil', 'Mist', 'Other'],
-    profileTitle: 'SKIN & CONSUMER PROFILE',
-    profiles: [
-      ['Target skin type', 'skin_type', ['Dry', 'Oily', 'Combination', 'Normal', 'Sensitive', 'Mature', 'All Skin Types']],
-      ['Primary concern', 'primary_concern', ['Hydration', 'Brightening', 'Firming', 'Anti-ageing', 'Soothing', 'Barrier Care', 'Pore Care', 'Blemish', 'Other']],
-    ],
-    formula: [
-      ['Texture', 'texture', ['Watery', 'Gel', 'Light Lotion', 'Cream', 'Rich Cream', 'Oil', 'Balm', 'Milky', 'Other']],
-      ['Finish', 'finish', ['Matte', 'Natural', 'Dewy', 'Glow', 'Silky', 'Non-greasy']],
-      ['Performance', 'performance', ['Fast Absorption', 'Long-lasting Hydration', 'Non-sticky', 'Soothing', 'Cooling', 'Layering Friendly', 'Other']],
-      ['Preferences', 'preferences', ['Vegan', 'Natural-derived', 'Organic', 'Fragrance-free', 'Alcohol-free', 'Silicone-free', 'Other']],
-    ],
-    packaging: ['Bottle', 'Pump', 'Dropper', 'Tube', 'Jar', 'Airless', 'Mist', 'Stick', 'Other'],
-    packagingDetailLabel: 'Packaging status',
-    packagingDetailName: 'packaging_status',
-    packagingDetail: ['Stock', 'Custom', 'Client Supplied', 'Open to Recommendation'],
-  },
-  'hair-care': {
-    productTypes: ['Shampoo', 'Conditioner', 'Hair Mask', 'Treatment', 'Leave-in', 'Hair Serum', 'Hair Oil', 'Scalp Treatment', 'Styling', 'Heat Protectant', 'Body Wash', 'Body Lotion', 'Body Cream', 'Body Oil', 'Body Scrub', 'Hand Care', 'Deodorant', 'Other'],
-    profileTitle: 'HAIR, SCALP & BODY PROFILE',
-    profiles: [
-      ['Target area', 'target_area', ['Hair', 'Scalp', 'Body', 'Hair & Body']],
-      ['Hair / skin profile', 'hair_skin_profile', ['Fine Hair', 'Thick Hair', 'Coloured Hair', 'Damaged Hair', 'Dry Scalp', 'Oily Scalp', 'Dry Skin', 'Sensitive Skin', 'All Types', 'Other']],
-      ['Primary objective', 'primary_objective', ['Moisture', 'Repair', 'Strength', 'Smoothness', 'Shine', 'Volume', 'Frizz Control', 'Scalp Care', 'Colour Protection', 'Cleansing', 'Exfoliation', 'Body Hydration', 'Other']],
-    ],
-    formula: [
-      ['Texture', 'texture', ['Liquid', 'Gel', 'Cream', 'Rich Mask', 'Oil', 'Serum', 'Mist', 'Foam', 'Other']],
-      ['Performance', 'performance', ['Fast Rinse', 'Low Residue', 'Long-lasting Fragrance', 'Heat Protection', 'Anti-frizz', 'Detangling', 'Softening', 'Other']],
-      ['Preferences', 'preferences', ['Vegan', 'Natural-derived', 'Silicone-free', 'Sulfate-free', 'Paraben-free', 'Fragrance-free', 'Colourant-free', 'Other']],
-    ],
-    packaging: ['Bottle', 'Pump', 'Tube', 'Jar', 'Sachet', 'Spray', 'Dropper', 'Airless', 'Stick', 'Other'],
-    packagingDetailLabel: 'Dispensing preference',
-    packagingDetailName: 'dispensing_preference',
-    packagingDetail: ['Flip Cap', 'Pump', 'Foaming Pump', 'Spray', 'Dropper', 'Open to Recommendation'],
-  },
-  makeup: {
-    productTypes: ['Foundation', 'Cushion', 'Concealer', 'BB / CC', 'Blush', 'Bronzer', 'Highlighter', 'Eyeshadow', 'Mascara', 'Eyeliner', 'Lipstick', 'Lip Balm', 'Lip Gloss', 'Lip Liner', 'Powder', 'Other'],
-    profileTitle: 'COLOUR & SHADE REQUIREMENTS',
-    profiles: [],
-    formula: [
-      ['Finish', 'finish', ['Matte', 'Soft Matte', 'Satin', 'Natural', 'Dewy', 'Glow', 'Glass / High Shine', 'Metallic', 'Other']],
-      ['Coverage / Payoff', 'coverage', ['Sheer', 'Buildable', 'Medium', 'Full', 'High Pigment']],
-      ['Performance', 'performance', ['Long Wear', 'Transfer Resistant', 'Sweat Resistant', 'Water Resistant', 'Oil Control', 'Crease Resistant', 'Non-drying', 'Other']],
-      ['Sensory', 'sensory', ['Lightweight', 'Creamy', 'Melting', 'Silky', 'Cushioning', 'Non-sticky', 'Comfortable']],
-    ],
-    packaging: ['Tube', 'Bottle', 'Compact', 'Cushion', 'Stick', 'Palette', 'Pen', 'Pot', 'Wand', 'Other'],
-    packagingDetailLabel: 'Colour references',
-    packagingDetailName: 'colour_references',
-    packagingDetail: ['Pantone', 'Benchmark', 'Swatch', 'Client Sample', 'Other'],
-  },
+  skincare: { productTypes: ['Cleanser', 'Toner', 'Essence', 'Serum', 'Ampoule', 'Emulsion', 'Cream', 'Gel', 'Mask', 'Eye Care', 'Oil', 'Mist', 'Other'] },
+  'hair-care': { productTypes: ['Shampoo', 'Conditioner', 'Hair Mask', 'Treatment', 'Leave-in', 'Hair Serum', 'Hair Oil', 'Scalp Treatment', 'Styling', 'Heat Protectant', 'Body Wash', 'Body Lotion', 'Body Cream', 'Body Oil', 'Body Scrub', 'Hand Care', 'Deodorant', 'Other'] },
+  makeup: { productTypes: ['Foundation', 'Cushion', 'Concealer', 'BB / CC', 'Blush', 'Bronzer', 'Highlighter', 'Eyeshadow', 'Mascara', 'Eyeliner', 'Lipstick', 'Lip Balm', 'Lip Gloss', 'Lip Liner', 'Powder', 'Other'] },
 } as const;
 
 function Section({ number, title, children }: { number: string; title: string; children: ReactNode }) {
@@ -94,15 +44,6 @@ function TextField({ label, name, type = 'text', required = false, placeholder }
         onInvalid={(event) => event.currentTarget.setCustomValidity(isDate ? 'Please enter the date in YYYY-MM-DD format.' : 'Please complete this field.')}
         onInput={(event) => event.currentTarget.setCustomValidity('')}
       />
-    </label>
-  );
-}
-
-function TextArea({ label, name, placeholder }: { label: string; name: string; placeholder?: string }) {
-  return (
-    <label className="form-field full-field">
-      <span>{label}</span>
-      <textarea name={name} rows={4} placeholder={placeholder} />
     </label>
   );
 }
@@ -170,81 +111,17 @@ export default function InquiryForm() {
         <TextField label="Target Launch Date" name="target_launch_date" type="date" />
       </Section>
 
-      <Section number="02" title="COMMERCIAL OVERVIEW">
-        <TextField label="Estimated Initial Quantity" name="initial_quantity" />
-        <TextField label="Expected Annual Volume" name="annual_volume" />
-        <TextField label="Target MOQ" name="target_moq" />
-        <Choices label="Target Price Positioning" name="price_positioning" options={common.price} />
-      </Section>
-
-      <Section number="03" title="BENCHMARK & REFERENCES">
-        <TextArea label="Benchmark products, brands or reference links" name="benchmark_references" placeholder="Include URLs and what you like about each reference." />
-        <Choices label="Reference supplied" name="reference_supplied" options={common.referenceType} />
-        <label className="upload-field full-field">
-          <FileUp size={22} />
-          <span><strong>Attach reference files</strong><small>Images, PDF, DOCX or XLSX · Up to 4 files, 5 MB each</small></span>
-          <input type="file" name="attachments" multiple accept=".jpg,.jpeg,.png,.webp,.pdf,.doc,.docx,.xls,.xlsx" />
-        </label>
-      </Section>
-
-      <Section number="04" title="PRODUCT & FORMAT">
+      <Section number="02" title="PRODUCT & FORMAT">
         <Choices label="Product type" name="product_type" options={fields.productTypes} />
         <TextField label="Working Product Name" name="product_name" />
         <TextField label={category === 'makeup' ? 'Fill Weight / Volume' : 'Target Fill Size'} name="fill_size" />
       </Section>
 
-      <Section number="05" title={fields.profileTitle}>
-        {category === 'makeup' ? (
-          <>
-            <TextField label="Number of Shades" name="number_of_shades" />
-            <Choices label="Colour References" name="colour_references" options={fields.packagingDetail} />
-            <TextArea label="Shade names, descriptions or colour targets" name="shade_targets" />
-          </>
-        ) : (
-          fields.profiles.map(([label, name, options]) => <Choices key={name} label={label} name={name} options={options} />)
-        )}
-      </Section>
-
-      <Section number="06" title={category === 'makeup' ? 'FORMULA, FINISH & PERFORMANCE' : 'FORMULA & SENSORY REQUIREMENTS'}>
-        {fields.formula.map(([label, name, options]) => <Choices key={name} label={label} name={name} options={options} />)}
-        <TextArea label={category === 'makeup' ? 'Key ingredients, technology or formula requirements' : 'Preferred / required ingredients or technologies'} name="formula_requirements" />
-        <TextArea label={category === 'makeup' ? 'Ingredients, pigments or materials to avoid' : 'Ingredients, materials or claims to avoid'} name="materials_to_avoid" />
-      </Section>
-
-      {category === 'makeup' && (
-        <Section number="07" title="BENCHMARK PRODUCT">
-          <TextArea label="What do you like about the benchmark product?" name="benchmark_details" placeholder="Colour, texture, finish, wear, coverage and application." />
-        </Section>
-      )}
-
-      <Section number={category === 'makeup' ? '08' : '07'} title={category === 'makeup' ? 'PACKAGING & APPLICATION' : 'CLAIMS & REGULATORY'}>
-        {category !== 'makeup' ? (
-          <>
-            <TextArea label="Desired claims / marketing positioning" name="claims_positioning" />
-            <Choices label="Target market" name="target_market" options={common.markets} />
-            <TextArea label="Known regulatory, certification or ingredient restrictions" name="regulatory_restrictions" />
-          </>
-        ) : (
-          <>
-            <Choices label="Packaging" name="packaging" options={fields.packaging} />
-            <TextArea label="Applicator / application requirements" name="application_requirements" />
-          </>
-        )}
-      </Section>
-
-      <Section number={category === 'makeup' ? '09' : '08'} title={category === 'makeup' ? 'CLAIMS & REGULATORY' : 'PACKAGING'}>
-        {category === 'makeup' ? (
-          <>
-            <TextArea label="Desired claims / positioning" name="claims_positioning" />
-            <Choices label="Target market" name="target_market" options={common.markets} />
-            <TextArea label="Known regulatory or ingredient restrictions" name="regulatory_restrictions" />
-          </>
-        ) : (
-          <>
-            <Choices label="Packaging" name="packaging" options={fields.packaging} />
-            <Choices label={fields.packagingDetailLabel} name={fields.packagingDetailName} options={fields.packagingDetail} />
-          </>
-        )}
+      <Section number="03" title="COMMERCIAL OVERVIEW">
+        <TextField label="Estimated Initial Quantity" name="initial_quantity" />
+        <TextField label="Expected Annual Volume" name="annual_volume" />
+        <TextField label="Target MOQ" name="target_moq" />
+        <Choices label="Target Price Positioning" name="price_positioning" options={common.price} />
       </Section>
 
       <div className="form-consent">
