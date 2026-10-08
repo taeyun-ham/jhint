@@ -1,3 +1,5 @@
+import { seoPages } from './seoData';
+
 export type PageSection = {
   eyebrow?: string;
   title: string;
@@ -105,6 +107,40 @@ const commonCategorySections: PageSection[] = [
 ];
 
 export const marketingPages: MarketingPage[] = [
+  {
+    slug: '/export',
+    navLabel: 'Export Preparation',
+    eyebrow: 'EXPORT PREPARATION / SOUTH KOREA',
+    title: 'Prepare your products',
+    accent: 'for international delivery.',
+    intro: 'Coordinate destination-market registration checks, air or sea freight booking and shipping documents before dispatch.',
+    metaTitle: 'Cosmetics Export Preparation & Shipping | JH International',
+    metaDescription: 'Cosmetics export preparation from Korea: destination-market product registration checks, air and sea freight booking, and CI, PKL, B/L and C/O documentation.',
+    sections: [
+      {
+        eyebrow: '01 / REGISTRATION CHECK',
+        title: 'Destination-market product registration',
+        body: ['Confirm the product registration status for the importing country with the buyer or importer before shipment.'],
+      },
+      {
+        eyebrow: '02 / FREIGHT BOOKING',
+        title: 'Air & sea freight',
+        body: ['Coordinate air or sea freight booking according to the agreed shipment schedule and delivery route.'],
+      },
+      {
+        eyebrow: '03 / SHIPPING DOCUMENTS',
+        title: 'Documentation for shipment',
+        body: ['Prepare and coordinate the applicable shipping documents for the agreed delivery route.'],
+        items: [
+          { title: 'CI / Commercial Invoice', body: 'Commercial details of the goods and transaction.' },
+          { title: 'PKL / Packing List', body: 'Packing details, quantities and shipment weights.' },
+          { title: 'B/L / Bill of Lading', body: 'Issued by the carrier for sea shipments as evidence of cargo receipt and the contract of carriage. Air shipments use an Air Waybill (AWB).' },
+          { title: 'C/O / Certificate of Origin', body: 'Certifies the country of origin of the exported products and is provided when needed to claim preferential tariffs or when required by the importing country or buyer.' },
+        ],
+      },
+    ],
+    related: ['/process', '/compliance', '/packaging', '/inquiry'],
+  },
   {
     slug: '/about',
     navLabel: 'About',
@@ -261,12 +297,18 @@ export const marketingPages: MarketingPage[] = [
   },
 ];
 
+// Keep page metadata aligned with the descriptions used in generated HTML.
+for (const page of marketingPages) {
+  page.metaDescription = seoPages[page.slug].description;
+}
+
 export const pageBySlug = new Map(marketingPages.map((page) => [page.slug, page]));
 
 export const labelBySlug = new Map<string, string>([
   ['/', 'Home'],
   ...marketingPages.map((page) => [page.slug, page.navLabel] as [string, string]),
   ['/process', 'Process'],
+  ['/compliance', 'Compliance'],
   ['/guides', 'Guides'],
   ['/location', 'Location'],
   ['/faq', 'FAQ'],

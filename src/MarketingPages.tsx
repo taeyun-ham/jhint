@@ -8,7 +8,7 @@ const capabilities = [
   { title: 'OEM / ODM', copy: 'Select an established platform or build a more customized development route.', href: '/oem-odm' },
   { title: 'Formulation & samples', copy: 'Shape ingredients, texture, finish and performance through structured sample review.', href: '/formulation' },
   { title: 'Packaging & filling', copy: 'Coordinate components, compatibility, decoration, filling, assembly and presentation.', href: '/packaging' },
-  { title: 'Export preparation', copy: 'Prepare finished goods and available project documentation for the agreed delivery route.', href: '/process' },
+  { title: 'Export preparation', copy: 'Coordinate product registration checks, air or sea freight booking and shipping documents.', href: '/export' },
 ];
 
 const manufacturingImages = [
@@ -21,6 +21,7 @@ const manufacturingImages = [
 ];
 
 const pageHeroImages: Record<string, string> = {
+  '/export': '/images/manufacturing/korean-cosmetics-export-preparation.webp',
   '/about': '/images/manufacturing/korean-cosmetics-oem-manufacturer-factory.webp',
   '/oem-odm': '/images/manufacturing/korean-cosmetics-mixing-tank-korea-v5.webp',
   '/skincare': '/images/categories/korean-skincare-oem-hero.webp',
@@ -49,13 +50,13 @@ function EvidenceImage({ number, title, description, src, alt, className = '' }:
 export function HomePage() {
   usePageMeta(
     'Korean Cosmetics OEM & ODM Manufacturer | JH International',
-    'JH International supports international beauty brands with Korean cosmetics formulation, samples, packaging, filling, finished-product manufacturing and export preparation.',
+    'JH International supports beauty brands with Korean cosmetics OEM/ODM formulation, samples, packaging, filling, finished-product manufacturing and export.',
     '/',
     {
       '@context': 'https://schema.org',
       '@graph': [
-        { '@type': 'Organization', '@id': `${window.location.origin}/#organization`, name: 'JH International', url: window.location.origin, areaServed: 'Worldwide', description: 'Korean cosmetics OEM and ODM product development and manufacturing partner for international beauty brands.' },
-        { '@type': 'WebSite', '@id': `${window.location.origin}/#website`, name: 'JH International', url: window.location.origin, publisher: { '@id': `${window.location.origin}/#organization` } },
+        { '@type': 'Organization', '@id': 'https://jhint.kr/#organization', name: 'JH International', url: 'https://jhint.kr', areaServed: 'Worldwide', description: 'Korean cosmetics OEM and ODM product development and manufacturing partner for international beauty brands.' },
+        { '@type': 'WebSite', '@id': 'https://jhint.kr/#website', name: 'JH International', url: 'https://jhint.kr', publisher: { '@id': 'https://jhint.kr/#organization' } },
       ],
     },
   );

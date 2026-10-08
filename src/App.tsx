@@ -5,13 +5,13 @@ import { GuidePage, GuidesPage, guides } from './GuidesPage';
 import { ContentPage, FaqPage, HomePage, NotFoundPage, ProcessPage } from './MarketingPages';
 import { pageBySlug } from './siteData';
 
-function normalizedPath() {
-  const path = window.location.pathname.replace(/\/+$/, '');
+function normalizedPath(pathname: string) {
+  const path = pathname.replace(/\/+$/, '');
   return path || '/';
 }
 
-export default function App() {
-  const path = normalizedPath();
+export default function App({ pathname = window.location.pathname }: { pathname?: string }) {
+  const path = normalizedPath(pathname);
   if (path === '/') return <HomePage />;
   if (path === '/process') return <ProcessPage />;
   if (path === '/faq') return <FaqPage />;

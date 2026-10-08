@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+import { seoPages } from './seoData';
 import type { ReactNode } from 'react';
 import { ArrowRight, ArrowUp, ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
 import { labelBySlug } from './siteData';
@@ -9,7 +10,15 @@ const primaryNav = [
   { label: 'PRODUCTS', links: [['/skincare', 'SKIN CARE'], ['/makeup', 'MAKE UP'], ['/sun-care', 'SUN CARE'], ['/hair-care', 'HAIR CARE'], ['/body-care', 'BODY CARE']] },
 ] as const;
 
+export type PageMetadata = { title: string; description: string; path: string; schema?: Record<string, unknown> };
+export const MetadataContext = createContext<((metadata: PageMetadata) => void) | null>(null);
+
 export function usePageMeta(title: string, description: string, path: string, schema?: Record<string, unknown>) {
+  const metadata = seoPages[path];
+  title = metadata?.title ?? title;
+  description = metadata?.description ?? description;
+  const collect = useContext(MetadataContext);
+  collect?.({ title, description, path, schema });
   useEffect(() => {
     document.title = title;
     document.querySelector('meta[name="description"]')?.setAttribute('content', description);
