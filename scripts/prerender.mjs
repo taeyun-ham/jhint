@@ -8,7 +8,7 @@ const escape = (value) => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;
 const serverDir = await mkdtemp(join(tmpdir(), 'jhint-ssg-'));
 try {
   await build({ ssr: { noExternal: true }, build: { ssr: 'src/entry-server.tsx', outDir: serverDir, emptyOutDir: true } });
-  const { render, seoPages } = await import(pathToFileURL(join(serverDir, 'entry-server.js')));
+  const { render, seoPages, heroImageForPath } = await import(pathToFileURL(join(serverDir, 'entry-server.js')));
   const template = await readFile('dist/index.html', 'utf8');
   for (const path of Object.keys(seoPages)) {
     const { html, metadata: { title, description, schema } } = render(path);
@@ -16,7 +16,9 @@ try {
     if ((html.match(/<h1(?:\s|>)/g) || []).length !== 1) throw new Error(path + ': expected one H1');
     const url = 'https://jhint.kr' + (path === '/' ? '' : path);
     const pageSchema = schema || { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description, url, isPartOf: { '@type': 'WebSite', name: 'JH International', url: 'https://jhint.kr' } };
+    const heroImage = heroImageForPath(path);
     const page = template
+      .replace('</head>', () => (heroImage ? '<link rel="preload" as="image" href="' + heroImage + '" fetchpriority="high" />' : '') + '</head>')
       .replace(/<title>[\s\S]*?<\/title>/, '<title>' + escape(title) + '</title>')
       .replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?>/, '<meta name="description" content="' + escape(description) + '" />')
       .replace(/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/, '<meta property="og:title" content="' + escape(title) + '" />')

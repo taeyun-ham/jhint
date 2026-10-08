@@ -52,7 +52,7 @@ img { max-width: 100%; }
 .home-hero h1 em, .page-hero h1 em { color: #96a9b6; font-style: normal; font-weight: 300; }
 .home-hero-copy > p:not(.eyebrow) { max-width: 610px; margin: auto 0 36px; color: #555b60; font-size: clamp(16px, 1.2vw, 20px); line-height: 1.62; }
 .hero-actions { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
-.home-hero-visual { position: relative; min-height: 480px; background: #8799a5 url('/hero-jh-v2.png') center / cover no-repeat; }
+.home-hero-visual { position: relative; min-height: 480px; background: #8799a5 url('/hero-jh-v2.webp') center / cover no-repeat; }
 
 .evidence-image { position: relative; min-height: 360px; margin: 0; overflow: hidden; background: #a4b1b9; }
 .evidence-image::after { content: ''; position: absolute; inset: 32% 0 0; background: linear-gradient(180deg, transparent, rgba(15, 18, 20, .86)); pointer-events: none; }
@@ -176,7 +176,7 @@ img { max-width: 100%; }
 .page-hero h1 { max-width: 1300px; margin: 0; font-size: clamp(58px, 7.1vw, 124px); line-height: .86; letter-spacing: -.075em; }
 .page-intro { max-width: 720px; margin: 28px 0 0 auto; color: #555b60; font-size: clamp(18px, 1.6vw, 25px); line-height: 1.6; }
 .location-hero { position: relative; isolation: isolate; min-height: 0; overflow: hidden; background: #edf1f2; }
-.location-hero::before { content: ''; position: absolute; z-index: -2; inset: 0; background: url('/images/editorial/jh-international-korea-world-map-hero.webp') center / cover no-repeat; }
+.location-hero::before { content: ''; position: absolute; z-index: -2; inset: 0; background: url('/images/editorial/jh-international-korea-world-map-hero-optimized.webp') center / cover no-repeat; }
 .location-hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(244,246,246,.88), rgba(244,246,246,.56) 47%, rgba(244,246,246,0) 75%); pointer-events: none; }
 .location-hero h1, .location-hero .page-intro, .location-hero .eyebrow, .location-hero .breadcrumbs { position: relative; }
 .location-hero .page-intro { max-width: 610px; margin-left: 0; }
@@ -192,7 +192,7 @@ img { max-width: 100%; }
 .location-map iframe { width: 100%; min-height: 360px; display: block; border: 0; background: #c9d3d8; }
 .location-map-links { display: flex; flex-wrap: wrap; gap: 28px; padding: 25px 0; }
 .location-map-links a { display: inline-flex; align-items: center; gap: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--ink); font-size: 11px; font-weight: 700; letter-spacing: .11em; }
-.guide-hero { --page-hero-image: url('/images/editorial/korean-cosmetics-buyer-guides-hero.webp'); }
+.guide-hero { --page-hero-image: url('/images/editorial/korean-cosmetics-buyer-guides-hero-optimized.webp'); }
 .guide-hero.has-background::before { background-position: 69% center; }
 .guide-hero h1 { max-width: 1100px; }
 .guide-list { padding: clamp(36px, 4.4vw, 66px) clamp(24px, 7vw, 120px); background: var(--paper); }
@@ -305,7 +305,7 @@ img { max-width: 100%; }
 /* Inquiry form */
 .inquiry-page { background: var(--paper); }
 .inquiry-hero { position: relative; isolation: isolate; overflow: hidden; padding: clamp(34px, 4.4vw, 69px) clamp(24px, 7vw, 120px); display: grid; grid-template-columns: 1.2fr .65fr; gap: 9vw; background: #aab9c4; }
-.inquiry-hero::before { content: ''; position: absolute; z-index: -2; inset: 0; background: url('/images/manufacturing/korean-skincare-oem-formulation-laboratory-v2.webp') center / cover no-repeat; }
+.inquiry-hero::before { content: ''; position: absolute; z-index: -2; inset: 0; background: url('/images/manufacturing/korean-skincare-oem-formulation-laboratory-v2-optimized.webp') center / cover no-repeat; }
 .inquiry-hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(170,185,196,.97) 0%, rgba(170,185,196,.94) 52%, rgba(170,185,196,.58) 100%); }
 .inquiry-hero .breadcrumbs { grid-column: 1 / -1; margin-bottom: 30px; }
 .inquiry-hero h1 { margin: 0; font-size: clamp(60px, 7vw, 120px); line-height: .86; letter-spacing: -.075em; }
