@@ -5,7 +5,7 @@ import { labelBySlug } from './siteData';
 
 const primaryNav = [
   { label: 'COMPANY', links: [['/about', 'ABOUT'], ['/compliance', 'COMPLIANCE'], ['/location', 'LOCATION']] },
-  { label: 'OEM/ODM', links: [['/oem-odm', 'OEM / ODM'], ['/process', 'PROCESS']] },
+  { label: 'OEM/ODM', links: [['/oem-odm', 'OEM / ODM'], ['/process', 'PROCESS'], ['/guides', 'GUIDES'], ['/faq', 'FAQ']] },
   { label: 'PRODUCTS', links: [['/skincare', 'SKIN CARE'], ['/makeup', 'MAKE UP'], ['/sun-care', 'SUN CARE'], ['/hair-care', 'HAIR CARE'], ['/body-care', 'BODY CARE']] },
 ] as const;
 
