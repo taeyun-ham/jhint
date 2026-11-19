@@ -57,6 +57,19 @@ INQUIRY_FROM_EMAIL=inquiry@your-verified-domain.com
 
 `.dev.vars`는 Git에 포함되지 않도록 설정되어 있습니다.
 
+### 로컬 개발 서버(맥북 + 폰 확인용)
+
+```bash
+npm run dev:local
+```
+
+- 화면: Vite 개발 서버 `5180` 포트(수정하면 바로 반영)
+- 문의 API: `wrangler dev`가 `127.0.0.1:8791`에서 실행되고 Vite가 `/api`를 넘겨줌
+- 맥북: http://localhost:5180
+- 폰(Tailscale 연결): http://taeyun-macbook-pro.tail66c147.ts.net:5180
+- `.dev.vars`가 없으면 문의 발송만 꺼진 상태로 뜸(제출 시 "Email delivery is being configured" 안내)
+- 중지: 실행한 터미널에서 `Ctrl+C`(Worker도 같이 종료)
+
 ## 3. Cloudflare에 비밀값 등록
 
 프로젝트 폴더에서 아래 명령을 각각 실행합니다.
