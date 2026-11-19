@@ -82,28 +82,29 @@ export function Breadcrumbs({ current }: { current: string }) {
   );
 }
 
-export function QuoteBand({ compact = false }: { compact?: boolean }) {
+// 페이지별로 제목·본문을 바꿀 수 있음(생략 시 공통 문구)
+export function QuoteBand({ compact = false, title = 'Tell us what you want to make.', body = 'Share your product category, market, quantity, target price, packaging direction and launch timing. We will review the brief and outline the next steps.' }: { compact?: boolean; title?: string; body?: string }) {
   return (
     <section className={`quote-band${compact ? ' compact' : ''}`}>
       <div>
         <p className="eyebrow light">START YOUR PRODUCT DEVELOPMENT</p>
-        <h2>Tell us what you want to make.</h2>
+        <h2>{title}</h2>
       </div>
       <div>
-        <p>Share your product category, market, quantity, target price, packaging direction and launch timing. We will review the brief and outline the next steps.</p>
+        <p>{body}</p>
         <a className="button acid" href="/inquiry">REQUEST AN OEM / ODM QUOTATION <ArrowRight size={18} /></a>
       </div>
     </section>
   );
 }
 
-export function RelatedLinks({ slugs }: { slugs: string[] }) {
+export function RelatedLinks({ slugs, labels }: { slugs: string[]; labels?: Record<string, string> }) {
   return (
     <section className="related-links" aria-labelledby="related-heading">
       <p className="eyebrow" id="related-heading">CONTINUE YOUR RESEARCH</p>
       <div>
         {slugs.map((slug) => (
-          <a href={slug} key={slug}><span>{labelBySlug.get(slug) || slug}</span><ArrowUpRight size={20} /></a>
+          <a href={slug} key={slug}><span>{labels?.[slug] || labelBySlug.get(slug) || slug}</span><ArrowUpRight size={20} /></a>
         ))}
       </div>
     </section>
@@ -115,12 +116,14 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-lead">
         <a className="brand footer-brand" href="/" aria-label="JH International home"><img src="/logo-jh-global.svg" alt="JH International" width="248" height="64" /></a>
-        <p>Korean cosmetics OEM &amp; ODM product development for international beauty brands.</p>
+        <p>End-to-end Korean cosmetics OEM &amp; ODM manufacturing for international brands.</p>
       </div>
+      {/* href 없는 a는 연결처 확인 전 자리만 둔 항목 */}
       <div className="footer-links">
-        <div><strong>CAPABILITIES</strong><a href="/oem-odm">OEM / ODM</a><a href="/formulation">Formulation</a><a href="/packaging">Packaging</a><a href="/moq">MOQ</a></div>
+        <div><strong>CAPABILITIES</strong><a href="/oem-odm">OEM / ODM</a><a href="/formulation">Formulation</a><a href="/packaging">Packaging &amp; Filling</a><a>Quality Control</a><a>Export Logistics</a></div>
         <div><strong>CATEGORIES</strong><a href="/skincare">Skincare</a><a href="/makeup">Makeup</a><a href="/sun-care">Sun Care</a><a href="/hair-care">Hair Care</a><a href="/body-care">Body Care</a></div>
-        <div><strong>COMPANY</strong><a href="/about">About</a><a href="/location">Location</a><a href="/process">Process</a><a href="/compliance">Compliance</a><a href="/guides">Guides</a><a href="/faq">FAQ</a><a href="/inquiry">Inquiry</a></div>
+        <div><strong>RESOURCES</strong><a href="/process">Process</a><a href="/compliance">Compliance</a><a>Buyer Guides</a><a>MOQ &amp; Lead Times</a></div>
+        <div><strong>COMPANY</strong><a href="/about">About Us</a><a href="/location">Location</a><a href="/faq">FAQ</a><a href="/inquiry">Contact / Inquiry</a></div>
       </div>
       <div className="footer-bottom"><span>© {new Date().getFullYear()} JH INTERNATIONAL</span><a href="/location">D-1311, 30 Songdo Mirae-ro, Incheon, South Korea</a><a href="#top">BACK TO TOP ↑</a></div>
     </footer>

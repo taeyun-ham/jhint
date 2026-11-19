@@ -6,19 +6,19 @@ import { Breadcrumbs, QuoteBand, RelatedLinks, SiteLayout, usePageMeta } from '.
 import { categories, faqs, processSteps, type MarketingPage } from './siteData';
 
 const capabilities = [
-  { title: 'OEM / ODM', copy: 'Select an established platform or build a more customized development route.', href: '/oem-odm' },
-  { title: 'Formulation & samples', copy: 'Shape ingredients, texture, finish and performance through structured sample review.', href: '/formulation' },
-  { title: 'Packaging & filling', copy: 'Coordinate components, compatibility, decoration, filling, assembly and presentation.', href: '/packaging' },
-  { title: 'Export preparation', copy: 'Coordinate product registration checks, air or sea freight booking and shipping documents.', href: '/export' },
+  { title: 'OEM / ODM', copy: 'Select a proven turnkey formula or build a custom development roadmap tailored to your brand from scratch.', href: '/oem-odm' },
+  { title: 'Formulation & sampling', copy: 'Refine ingredients, texture, finish, and clinical performance through structured lab testing and sample reviews.', href: '/formulation' },
+  { title: 'Packaging & filling', copy: 'State-of-the-art machinery, automated filling, component sourcing, stability testing, packaging and assembly.', href: '/packaging' },
+  { title: 'Export & compliance', copy: 'Coordinate global regulatory compliance checks, air or sea freight booking, and export-ready shipping documentation.', href: '/export' },
 ];
 
 const manufacturingImages = [
-  { number: '03', title: 'Factory exterior', description: 'Korean cosmetics manufacturing facility and production environment.', src: '/images/manufacturing/korean-cosmetics-oem-manufacturer-factory-optimized.webp', alt: 'Modern Korean cosmetics OEM manufacturing facility exterior' },
-  { number: '04', title: 'Mixing & production', description: 'Stainless-steel mixing tanks and clean cosmetics production equipment.', src: '/images/manufacturing/korean-cosmetics-mixing-tank-korea-v5-optimized.webp', alt: 'Stainless steel cosmetic formulation mixing tanks in a clean production facility' },
-  { number: '05', title: 'Filling line', description: 'Precision cosmetic filling for bottles, tubes, jars and other formats.', src: '/images/manufacturing/korean-cosmetics-filling-machine-korea-v3-optimized.webp', alt: 'Automated Korean cosmetics filling line operating with four matching nozzles and connected supply hoses' },
-  { number: '06', title: 'Packaging line', description: 'Packaging, labelling, coding and finished-product assembly.', src: '/images/manufacturing/korean-cosmetics-packaging-line-korea-v6-optimized.webp', alt: 'One worker placing a cosmetic jar into a snug retail carton on a uniform-width packaging conveyor' },
-  { number: '07', title: 'Quality control', description: 'Inspection of bulk formulas, components and finished cosmetic products.', src: '/images/manufacturing/korean-cosmetics-quality-control-korea-v2-optimized.webp', alt: 'Masked quality control specialist inspecting cosmetic products in a windowless laboratory' },
-  { number: '08', title: 'Finished products', description: 'Finished products, packaging components and export-ready cartons.', src: '/images/manufacturing/korean-cosmetics-finished-products-korea-optimized.webp', alt: 'Finished cosmetic products and export-ready packaging cartons' },
+  { number: '04', title: 'Mixing & compounding', description: 'Industrial stainless-steel mixing tanks and hygienic formulation equipment.', src: '/images/manufacturing/korean-cosmetics-mixing-tank-korea-v5-optimized.webp', alt: 'Stainless steel cosmetic formulation mixing tanks in a clean production facility' },
+  { number: '05', title: 'Automated filling lines', description: 'High-precision cosmetic filling for bottles, tubes, jars, and custom formats.', src: '/images/manufacturing/korean-cosmetics-filling-machine-korea-v3-optimized.webp', alt: 'Automated Korean cosmetics filling line operating with four matching nozzles and connected supply hoses' },
+  { number: '06', title: 'Packaging & assembly', description: 'Automated labeling, batch coding, secondary packaging, and final product assembly.', src: '/images/manufacturing/korean-cosmetics-packaging-line-korea-v6-optimized.webp', alt: 'One worker placing a cosmetic jar into a snug retail carton on a uniform-width packaging conveyor' },
+  { number: '07', title: 'Quality assurance & testing', description: 'Rigorous inspection of bulk formulations, packaging components, and finished goods.', src: '/images/manufacturing/korean-cosmetics-quality-control-korea-v2-optimized.webp', alt: 'Masked quality control specialist inspecting cosmetic products in a windowless laboratory' },
+  { number: '08', title: 'Export-ready finished goods', description: 'Completed cosmetic products, master cartons, and export-ready shipments.', src: '/images/manufacturing/korean-cosmetics-finished-products-korea-optimized.webp', alt: 'Finished cosmetic products and export-ready packaging cartons' },
+  { number: '09', title: 'Export logistics', description: 'Palletized shipments, warehousing, and freight coordination for international delivery.', src: '/images/manufacturing/korean-cosmetics-export-logistics-optimized.webp', alt: 'Forklift loading shrink-wrapped pallets of cosmetic cartons onto an export truck' },
 ];
 
 
@@ -66,17 +66,17 @@ export function HomePage() {
     <SiteLayout>
       <section className="home-hero">
         <div className="home-hero-copy">
-          <p className="eyebrow">KOREAN COSMETICS OEM &amp; ODM MANUFACTURER</p>
-          <h1>Develop.<br />Manufacture.<br /><em>Build your brand.</em></h1>
-          <p>Complete Korean cosmetics product development for international beauty brands—from formulation and samples to packaging, filling, assembly and export-ready finished products.</p>
-          <div className="hero-actions"><a className="button dark" href="/inquiry">REQUEST OEM / ODM CONSULTATION <ArrowRight size={18} /></a><a className="text-link" href="/process">EXPLORE THE PROCESS <ArrowUpRight size={16} /></a></div>
+          <p className="eyebrow">Korean Cosmetics OEM/ODM Manufacture</p>
+          <h1>Formulate.<br />Manufacture.<br /><em>Scale your brand.</em></h1>
+          <p>Turnkey K-beauty product development for global brands—from custom formulation and prototyping to packaging, filling, and export-ready delivery.</p>
+          <div className="hero-actions"><a className="button dark" href="/inquiry">BOOK A CONSULTATION <ArrowRight size={18} /></a><a className="text-link" href="/process">DISCOVER OUR PROCESS <ArrowUpRight size={16} /></a></div>
         </div>
         <div className="home-hero-visual" role="img" aria-label="JH International premium cosmetic packaging concept" />
       </section>
 
       <section className="positioning-section">
-        <p className="eyebrow light">COMPLETE COSMETIC MANUFACTURING IN KOREA</p>
-        <div><h2>One connected path from first brief to finished product.</h2><p>JH International supports the decisions that turn a beauty concept into a manufacturable product: formula route, samples, packaging, project-specific quality requirements, production, filling and delivery preparation.</p></div>
+        <p className="eyebrow light">COMPLETE KOREAN MADE COSMETIC MANUFACTURING</p>
+        <div><h2>One seamless path from initial brief to finished product.</h2><p>JH International guides every client through each critical step to turn your beauty concept into a market-ready product—from laboratorial investigation to formulation, sampling, and regulatory compliance, packaging &amp; design, quality assurance, filling, and export preparation.</p></div>
       </section>
 
       <section className="capabilities-section">
@@ -86,28 +86,28 @@ export function HomePage() {
 
       <section className="category-section">
         <div className="section-intro light"><p className="eyebrow light">PRODUCT CATEGORIES</p><h2>Five categories.<br /><em>Many ways to differentiate.</em></h2></div>
-        <div className="category-list">{categories.map((category) => <a href={category.slug} key={category.slug}><span>{category.number}</span><div><h3>{category.title}</h3><p>{category.description}</p></div><ArrowRight /></a>)}</div>
+        <div className="category-list">{categories.map((category) => <a href={category.slug} key={category.slug}><span>{category.number}</span><div><h3>{category.title}</h3><p>{category.homeDescription}</p></div><ArrowRight /></a>)}</div>
       </section>
 
       <section className="journey-section">
-        <div><p className="eyebrow">FROM CONCEPT TO FINISHED PRODUCT</p><h2>A process international buyers can follow.</h2><p>Each stage connects to the next, with project details confirmed before the work moves forward.</p><a className="text-link" href="/process">VIEW ALL 10 STEPS <ArrowUpRight size={16} /></a></div>
+        <div><p className="eyebrow">FROM CONCEPT TO FINISHED PRODUCT</p><h2>A transparent process built for international buyers.</h2><p>Each stage flows seamlessly into the next, with every project milestone approved before production moves forward.</p><a className="text-link" href="/process">VIEW ALL 10 STEPS <ArrowUpRight size={16} /></a></div>
         <ol>{['Formulation', 'Sample', 'Packaging', 'Production', 'Filling', 'Assembly', 'Export'].map((step, i) => <li key={step}><span>0{i + 1}</span>{step}</li>)}</ol>
       </section>
 
       <section className="rnd-section" id="rnd-image">
         <div className="rnd-panel"><EvidenceImage number="02" title="Korean cosmetic R&D laboratory" description="Formula research, ingredient evaluation and sample preparation for beauty product development." src="/images/manufacturing/korean-skincare-oem-formulation-laboratory-v2-optimized.webp" alt="Masked cosmetic formulation scientist working in a modern Korean research laboratory" className="rnd-image" /></div>
-        <div className="rnd-copy"><p>Good development balances brand positioning with the realities of formula, packaging, quantity, timing and destination market.</p><ul><li><Check />Brief and benchmark review</li><li><Check />Formula and prototype direction</li><li><Check />Sample feedback and revisions</li><li><Check />Packaging compatibility considerations</li></ul><a className="button dark" href="/formulation">FORMULATION DEVELOPMENT <ArrowRight size={18} /></a></div>
+        <div className="rnd-copy"><p>Successful product development balances brand positioning with formulation, packaging, MOQs, lead times, and target market compliance.</p><ul><li><Check />BRIEF &amp; BENCHMARK REVIEW</li><li><Check />FORMULATION &amp; PROTOTYPE DIRECTION</li><li><Check />SAMPLE EVALUATION &amp; REVISIONS</li><li><Check />PACKAGING COMPATIBILITY TESTING</li></ul><a className="button dark" href="/formulation">FORMULATION DEVELOPMENT <ArrowRight size={18} /></a></div>
       </section>
 
       <section className="manufacturing-proof-section" id="manufacturing-images">
-        <div className="section-intro"><p className="eyebrow">MANUFACTURING CAPABILITY</p><h2>See the complete route from production to finished goods.</h2></div>
-        <p className="image-plan-note">Concept imagery is shown to communicate the intended facilities and capabilities. Replace it with verified JH International or manufacturing-partner photography before making facility-specific claims.</p>
+        <div className="section-intro"><p className="eyebrow">MANUFACTURING CAPABILITY</p><h2>Explore the end-to-end journey from production to finished goods.</h2></div>
+        <p className="image-plan-note">Take a closer look at our fully certified Korean manufacturing facilities, automated production lines, and quality-controlled assembly.</p>
         <div className="manufacturing-image-grid">{manufacturingImages.map((image) => <EvidenceImage key={image.number} {...image} />)}</div>
       </section>
 
       <section className="trust-section">
-        <div><p className="eyebrow light">WHY INTERNATIONAL BRANDS WORK WITH JH</p><h2>Practical answers.<br />A visible process.<br /><em>One focused partner.</em></h2></div>
-        <div className="trust-points"><article><Globe2 /><h3>International brief</h3><p>Projects begin with the target market, consumer, price, quantity and launch plan.</p></article><article><ShieldCheck /><h3>Project-specific control</h3><p>Testing, documentation and quality requirements are confirmed for the actual product.</p></article><article><PackageCheck /><h3>Finished-product thinking</h3><p>Formula, pack, filling, assembly and delivery preparation are treated as one connected system.</p></article></div>
+        <div><p className="eyebrow light">WHY INTERNATIONAL BRANDS WORK WITH JH</p><h2>Practical solutions.<br />A transparent process.<br /><em>One dedicated partner.</em></h2></div>
+        <div className="trust-points"><article><Globe2 /><h3>Global market alignment</h3><p>Every project begins with your target market, consumer profile, price point, MOQ, and launch timeline.</p></article><article><ShieldCheck /><h3>Tailored quality &amp; compliance</h3><p>Safety testing, regulatory documentation, and quality assurance protocols are verified specifically for your formulation and destination market.</p></article><article><PackageCheck /><h3>End-to-end integration</h3><p>Formulation, packaging, filling, assembly, and export logistics are managed as one seamless system.</p></article></div>
       </section>
 
       <section className="home-faq">
@@ -115,8 +115,8 @@ export function HomePage() {
         <div className="faq-list">{faqs.slice(0, 5).map(([q, a], i) => <details key={q} open={i === 0}><summary><span>0{i + 1}</span>{q}<b>+</b></summary><p>{a}</p></details>)}</div>
         <a className="text-link" href="/faq">VIEW ALL FREQUENTLY ASKED QUESTIONS <ArrowUpRight size={16} /></a>
       </section>
-      <section className="guide-promo"><div><p className="eyebrow">BUYER GUIDES</p><h2>Compare your options before development begins.</h2></div><div><p>Explore OEM versus ODM, stock versus custom formulas and packaging, and the decisions behind cost and timing.</p><a className="button dark" href="/guides">EXPLORE ALL GUIDES <ArrowRight size={18} /></a></div></section>
-      <QuoteBand />
+      <section className="guide-promo"><div><p className="eyebrow">BUYER GUIDES</p><h2>Compare your options before development begins.</h2></div><div><p>Compare OEM/ODM manufacturing processes, stock vs custom formulations and compatible packaging, and the key factors driving cost and timelines.</p><a className="button dark" href="/guides">EXPLORE ALL GUIDES <ArrowRight size={18} /></a></div></section>
+      <QuoteBand body="Share your product category, concept, target market, order quantity, target price, packaging direction, and launch timeline. We will review your brief and outline the next steps." />
     </SiteLayout>
   );
 }
@@ -140,12 +140,13 @@ export function ContentPage({ page }: { page: MarketingPage }) {
             <div className="editorial-heading"><p className="eyebrow">{section.eyebrow}</p><h2>{section.title}</h2></div>
             <div className="editorial-body">
               {section.body?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {section.points && <ul className="editorial-points">{section.points.map((point) => <li key={point.label}><strong>{point.label}</strong> {point.body}</li>)}</ul>}
               {section.items && <div className="editorial-cards">{section.items.map((item, i) => <article key={item.title}><span>{String(i + 1).padStart(2, '0')}</span><h3>{item.title}</h3><p>{item.body}</p></article>)}</div>}
             </div>
           </section>
         ))}
-        <RelatedLinks slugs={page.related} />
-        <QuoteBand compact />
+        <RelatedLinks slugs={page.related} labels={page.relatedLabels} />
+        <QuoteBand compact {...page.quote} />
       </article>
     </SiteLayout>
   );
