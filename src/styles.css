@@ -294,7 +294,7 @@ img { max-width: 100%; }
 .site-footer { padding: 44px clamp(24px, 6vw, 100px) 34px; background: var(--ink); color: white; }
 .footer-lead { display: grid; grid-template-columns: 1fr 1fr; gap: 7vw; padding-bottom: 30px; border-bottom: 1px solid var(--light-line); }
 .footer-lead p { max-width: 560px; margin: 0; color: #aaafb2; font-size: 18px; line-height: 1.6; }
-.footer-links { padding: 30px 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 5vw; }
+.footer-links { padding: 30px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 5vw; }
 .footer-links div { display: flex; flex-direction: column; gap: 13px; }
 .footer-links strong { margin-bottom: 10px; color: #747a7e; font-size: 9px; letter-spacing: .18em; }
 .footer-links a { width: fit-content; color: #c6c9cb; font-size: 13px; }

@@ -27,6 +27,8 @@ export const categories = [
     number: '01',
     title: 'Skincare',
     description: 'Korean skincare OEM and ODM development for daily care, treatment and targeted formats.',
+    // 홈 카테고리 목록 전용 설명(카테고리 페이지 소개문은 description 유지)
+    homeDescription: 'Korean skincare OEM and ODM development across daily essentials, active treatments, and targeted formats.',
     formats: ['Moisturiser', 'Serum', 'Essence', 'Toner', 'Cream', 'Lotion', 'Cleanser', 'Eye cream', 'Face mask', 'Ampoule', 'Exfoliator', 'Oil', 'Balm'],
   },
   {
@@ -34,6 +36,7 @@ export const categories = [
     number: '02',
     title: 'Makeup',
     description: 'Colour cosmetics development shaped around shade, payoff, texture, finish and application.',
+    homeDescription: 'Color cosmetics development tailored around shade range, pigment payoff, texture, finish, and application.',
     formats: ['Foundation', 'Cushion', 'Concealer', 'Lipstick', 'Lip gloss', 'Lip balm', 'Lip liner', 'Blush', 'Bronzer', 'Highlighter', 'Eyeshadow', 'Mascara', 'Eyeliner', 'Primer'],
   },
   {
@@ -41,6 +44,7 @@ export const categories = [
     number: '03',
     title: 'Sun Care',
     description: 'Sun care concepts developed around format, sensory profile, target market and project testing needs.',
+    homeDescription: 'Sun care formulations engineered for optimal texture, sensory feel, market compliance, and SPF testing requirements.',
     formats: ['Sun cream', 'Sun serum', 'Sun stick', 'Sun cushion', 'Sun spray', 'After-sun care'],
   },
   {
@@ -48,6 +52,7 @@ export const categories = [
     number: '04',
     title: 'Hair Care',
     description: 'Hair and scalp care OEM/ODM projects from cleansing and conditioning to targeted treatments.',
+    homeDescription: 'Hair and scalp care OEM/ODM solutions spanning daily cleansing, conditioning, and targeted treatments.',
     formats: ['Shampoo', 'Conditioner', 'Hair mask', 'Treatment', 'Leave-in care', 'Hair serum', 'Hair oil', 'Scalp treatment', 'Styling care'],
   },
   {
@@ -55,6 +60,7 @@ export const categories = [
     number: '05',
     title: 'Body Care',
     description: 'Body and personal care concepts with tailored texture, fragrance direction and packaging.',
+    homeDescription: 'Body and personal care formulations customized around texture, signature fragrance, and functional packaging.',
     formats: ['Body wash', 'Body lotion', 'Body cream', 'Body scrub', 'Hand care', 'Foot care', 'Body oil', 'Body mist'],
   },
 ] as const;
@@ -73,11 +79,11 @@ export const processSteps = [
 ] as const;
 
 export const faqs = [
-  ['Do you manufacture cosmetics in Korea?', 'JH International supports cosmetic product development and manufacturing in South Korea for international beauty brands. The exact manufacturing route and facility are matched to the product category and project requirements.'],
-  ['Do you provide both OEM and ODM services?', 'Yes. OEM can suit brands bringing an established specification, while ODM can include a broader development route from concept and formula through packaging and finished product. The final scope is confirmed after the brief review.'],
-  ['What is the MOQ for Korean cosmetics manufacturing?', 'MOQ is project-specific. It changes with formula type, shade count, stock or custom packaging, component decoration and production conditions. We confirm a realistic minimum after reviewing the product brief.'],
-  ['Can I use an existing formula?', 'An existing or stock-formula route may be possible depending on the category and required changes. Please send the desired product type, target market and benchmark so we can assess the appropriate route.'],
-  ['Can you develop a new custom formula?', 'Custom development can be considered for suitable projects. Your concept, target texture or finish, preferred ingredients, claims direction, market, quantity and timing help define feasibility.'],
+  ['Do you manufacture cosmetics in Korea?', 'JH International manages cosmetic product development and manufacturing in South Korea for international beauty brands. Each production roadmap and certified facility is matched specifically to your product category and project requirements.'],
+  ['Do you provide both OEM and ODM services?', 'Yes. OEM is ideal for brands bringing an existing specification or formula, while ODM provides end-to-end development from initial concept and formulation through packaging and export-ready finished goods. The final project scope is confirmed following a review of your brief.'],
+  ['What is the MOQ for Korean cosmetics manufacturing?', 'Minimum order quantities (MOQs) are project-specific and depend on your formula type, shade range, stock or custom packaging, component decoration, and production requirements. We confirm a realistic, tailored MOQ after reviewing your product brief.'],
+  ['Can I use an existing formula?', 'Yes, leveraging an existing or turnkey stock formula is often possible depending on your product category and desired customizations. Share your target product type, destination market, and benchmark so our team can recommend the best development path.'],
+  ['Can I develop a new custom formulation?', 'Yes, custom formulation is available for qualified projects. Share your product concept, target texture or finish, key ingredients, marketing claims, target market, estimated volume, and launch timeline so we can assess feasibility.'],
   ['Can I receive samples before mass production?', 'Sample development is part of the normal review process. The number of rounds, sample timing and any associated costs depend on the formula and project scope.'],
   ['Do you support private-label projects?', 'Yes. Private-label and more customized OEM/ODM routes can be reviewed. The best option depends on how much differentiation you need in formula, packaging and presentation.'],
   ['Can you source packaging and manage filling?', 'Packaging selection, compatibility considerations, filling and assembly can be coordinated as part of the finished-product project. Stock and custom packaging have different MOQ, cost and timing implications.'],
