@@ -118,11 +118,10 @@ export function SiteFooter() {
         <a className="brand footer-brand" href="/" aria-label="JH International home"><img src="/logo-jh-global.svg" alt="JH International" width="248" height="64" /></a>
         <p>End-to-end Korean cosmetics OEM &amp; ODM manufacturing for international brands.</p>
       </div>
-      {/* href 없는 a는 연결처 확인 전 자리만 둔 항목 */}
       <div className="footer-links">
-        <div><strong>CAPABILITIES</strong><a href="/oem-odm">OEM / ODM</a><a href="/formulation">Formulation</a><a href="/packaging">Packaging &amp; Filling</a><a>Quality Control</a><a>Export Logistics</a></div>
+        <div><strong>CAPABILITIES</strong><a href="/oem-odm">OEM / ODM</a><a href="/formulation">Formulation</a><a href="/packaging">Packaging &amp; Filling</a><a href="/compliance">Quality Control</a><a href="/process">Export Logistics</a></div>
         <div><strong>CATEGORIES</strong><a href="/skincare">Skincare</a><a href="/makeup">Makeup</a><a href="/sun-care">Sun Care</a><a href="/hair-care">Hair Care</a><a href="/body-care">Body Care</a></div>
-        <div><strong>RESOURCES</strong><a href="/process">Process</a><a href="/compliance">Compliance</a><a>Buyer Guides</a><a>MOQ &amp; Lead Times</a></div>
+        <div><strong>RESOURCES</strong><a href="/process">Process</a><a href="/compliance">Compliance</a><a href="/guides">Buyer Guides</a><a href="/moq">MOQ &amp; Lead Times</a></div>
         <div><strong>COMPANY</strong><a href="/about">About Us</a><a href="/location">Location</a><a href="/faq">FAQ</a><a href="/inquiry">Contact / Inquiry</a></div>
       </div>
       <div className="footer-bottom"><span>© {new Date().getFullYear()} JH INTERNATIONAL</span><a href="/location">D-1311, 30 Songdo Mirae-ro, Incheon, South Korea</a><a href="#top">BACK TO TOP ↑</a></div>
