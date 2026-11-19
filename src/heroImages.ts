@@ -1,6 +1,6 @@
 export const pageHeroImages: Record<string, string> = {
   '/export': '/images/manufacturing/korean-cosmetics-export-preparation-optimized.webp',
-  '/about': '/images/manufacturing/korean-cosmetics-oem-manufacturer-factory-optimized.webp',
+  '/about': '/images/manufacturing/korean-cosmetics-export-warehouse-optimized.webp',
   '/oem-odm': '/images/manufacturing/korean-cosmetics-mixing-tank-korea-v5-optimized.webp',
   '/skincare': '/images/categories/korean-skincare-oem-hero-optimized.webp',
   '/makeup': '/images/categories/korean-makeup-oem-hero-optimized.webp',

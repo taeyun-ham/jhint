@@ -13,12 +13,12 @@ const capabilities = [
 ];
 
 const manufacturingImages = [
-  { number: '03', title: 'Manufacturing facility', description: 'Certified Korean cosmetics production facility and controlled manufacturing environment.', src: '/images/manufacturing/korean-cosmetics-oem-manufacturer-factory-optimized.webp', alt: 'Modern Korean cosmetics OEM manufacturing facility exterior' },
   { number: '04', title: 'Mixing & compounding', description: 'Industrial stainless-steel mixing tanks and hygienic formulation equipment.', src: '/images/manufacturing/korean-cosmetics-mixing-tank-korea-v5-optimized.webp', alt: 'Stainless steel cosmetic formulation mixing tanks in a clean production facility' },
   { number: '05', title: 'Automated filling lines', description: 'High-precision cosmetic filling for bottles, tubes, jars, and custom formats.', src: '/images/manufacturing/korean-cosmetics-filling-machine-korea-v3-optimized.webp', alt: 'Automated Korean cosmetics filling line operating with four matching nozzles and connected supply hoses' },
   { number: '06', title: 'Packaging & assembly', description: 'Automated labeling, batch coding, secondary packaging, and final product assembly.', src: '/images/manufacturing/korean-cosmetics-packaging-line-korea-v6-optimized.webp', alt: 'One worker placing a cosmetic jar into a snug retail carton on a uniform-width packaging conveyor' },
   { number: '07', title: 'Quality assurance & testing', description: 'Rigorous inspection of bulk formulations, packaging components, and finished goods.', src: '/images/manufacturing/korean-cosmetics-quality-control-korea-v2-optimized.webp', alt: 'Masked quality control specialist inspecting cosmetic products in a windowless laboratory' },
   { number: '08', title: 'Export-ready finished goods', description: 'Completed cosmetic products, master cartons, and export-ready shipments.', src: '/images/manufacturing/korean-cosmetics-finished-products-korea-optimized.webp', alt: 'Finished cosmetic products and export-ready packaging cartons' },
+  { number: '09', title: 'Export logistics', description: 'Palletized shipments, warehousing, and freight coordination for international delivery.', src: '/images/manufacturing/korean-cosmetics-export-logistics-optimized.webp', alt: 'Forklift loading shrink-wrapped pallets of cosmetic cartons onto an export truck' },
 ];
 
 
