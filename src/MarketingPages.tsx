@@ -140,12 +140,13 @@ export function ContentPage({ page }: { page: MarketingPage }) {
             <div className="editorial-heading"><p className="eyebrow">{section.eyebrow}</p><h2>{section.title}</h2></div>
             <div className="editorial-body">
               {section.body?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {section.points && <ul className="editorial-points">{section.points.map((point) => <li key={point.label}><strong>{point.label}</strong> {point.body}</li>)}</ul>}
               {section.items && <div className="editorial-cards">{section.items.map((item, i) => <article key={item.title}><span>{String(i + 1).padStart(2, '0')}</span><h3>{item.title}</h3><p>{item.body}</p></article>)}</div>}
             </div>
           </section>
         ))}
-        <RelatedLinks slugs={page.related} />
-        <QuoteBand compact />
+        <RelatedLinks slugs={page.related} labels={page.relatedLabels} />
+        <QuoteBand compact {...page.quote} />
       </article>
     </SiteLayout>
   );

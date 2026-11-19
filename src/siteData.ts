@@ -5,6 +5,7 @@ export type PageSection = {
   title: string;
   body?: string[];
   items?: Array<{ title: string; body: string }>;
+  points?: Array<{ label: string; body: string }>;
 };
 
 export type MarketingPage = {
@@ -19,6 +20,9 @@ export type MarketingPage = {
   products?: string[];
   sections: PageSection[];
   related: string[];
+  // 페이지별 관련 링크 이름·마지막 문의 구역 문구(생략 시 공통값)
+  relatedLabels?: Record<string, string>;
+  quote?: { title?: string; body?: string };
 };
 
 export const categories = [
@@ -151,31 +155,41 @@ export const marketingPages: MarketingPage[] = [
     slug: '/about',
     navLabel: 'About',
     eyebrow: 'JH INTERNATIONAL / SOUTH KOREA',
-    title: 'A Korean cosmetics manufacturing partner',
+    title: 'Your Korean cosmetics manufacturing partner',
     accent: 'for international beauty brands.',
-    intro: 'JH International connects product strategy, Korean formulation development, packaging, manufacturing coordination and export preparation in one clear project path.',
+    intro: 'JH International connects product strategy, Korean formulation development, regulatory compliance, packaging, production management, and export preparation in one seamless path.',
     metaTitle: 'About JH International | Korean Cosmetics Manufacturing Partner',
     metaDescription: 'Meet JH International, a Korean cosmetics OEM and ODM manufacturing partner supporting international beauty brands from concept to finished product.',
     sections: [
       {
-        eyebrow: 'WHO WE SUPPORT',
+        eyebrow: 'HOW WE COLLABORATE',
         title: 'Built for brands working across borders',
         items: [
-          { title: 'Startups', body: 'Structure an early concept into a manufacturable product brief and realistic development route.' },
-          { title: 'Retailers & distributors', body: 'Develop market-relevant private-label products with coordinated formula, pack and production decisions.' },
-          { title: 'Established brands', body: 'Extend a portfolio or develop a differentiated Korean-made concept for a new consumer or market.' },
+          { title: 'Established beauty brands', body: 'Scale existing product lines or launch differentiated Korean-made SKUs backed by large-scale production capabilities, strict quality assurance, and global regulatory compliance.' },
+          { title: 'Retailers & global distributors', body: 'Develop high-volume private-label and exclusive retail collections with turnkey formulation, custom tooling, automated filling, and international export logistics.' },
+          { title: 'Funded & emerging brands', body: 'Translate commercial product briefs into scalable, retail-ready formulations with structured R&D, compliance documentation, and production planning.' },
         ],
       },
       {
         eyebrow: 'OUR ROLE',
-        title: 'From formulation to export-ready finished products',
+        title: 'Korean OEM/ODM beauty manufacturing built to scale',
         body: [
-          'We support skincare, makeup, sun care, hair care and body care projects through formulation, samples, packaging coordination, filling, assembly and finished-product preparation.',
-          'Capabilities, testing, documentation and schedules are confirmed against each individual brief so buyers receive project-specific answers rather than generic promises.',
+          'Operating out of South Korea, we partner with brands across skincare, makeup, sun care, hair care, and body care—from emerging lines to global, multi-SKU portfolios. Every project is scoped directly against your commercial brief, aligning production capacity, quality control, and delivery schedules to support reliable execution at every stage of growth.',
+        ],
+        points: [
+          { label: 'Turnkey OEM & ODM:', body: 'Custom R&D, proven base formulations, and primary and secondary packaging sourcing managed under one roof.' },
+          { label: 'Scalable Production:', body: 'Flexible-to-high-volume filling, multi-SKU batching, and retail-ready assembly built for growing demand.' },
+          { label: 'Global Compliance & Testing:', body: 'Full regulatory documentation, stability and safety testing, and market-specific registration support (FDA, EU CPNP, and beyond).' },
+          { label: 'Export & Delivery Support:', body: 'End-to-end export documentation, customs-ready packing, and international freight coordination straight from South Korea.' },
         ],
       },
     ],
     related: ['/oem-odm', '/location', '/inquiry'],
+    relatedLabels: { '/oem-odm': 'OEM/ODM SERVICE', '/location': 'OUR LOCATION', '/inquiry': 'MAKE AN INQUIRY' },
+    quote: {
+      title: 'Tell us what you would like to create with us.',
+      body: 'Share your product scope, target markets, estimated volumes, packaging direction, and launch timeline. Our Korean R&D and commercial team will review your brief and provide a tailored feasibility plan, pricing, and the next steps.',
+    },
   },
   {
     slug: '/oem-odm',

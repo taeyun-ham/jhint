@@ -223,6 +223,9 @@ img { max-width: 100%; }
 .editorial-section.tinted { background: #e1e4e4; }
 .editorial-heading h2 { margin: 0; font-size: clamp(43px, 4.8vw, 78px); line-height: .97; letter-spacing: -.058em; }
 .editorial-body > p { margin: 0 0 28px; color: #575e63; font-size: clamp(17px, 1.35vw, 21px); line-height: 1.7; }
+.editorial-points { margin: 0 0 28px; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.editorial-points li { padding: 18px 0; border-bottom: 1px solid var(--line); color: #575e63; font-size: 17px; line-height: 1.65; }
+.editorial-points strong { color: var(--ink); }
 .editorial-cards { border-top: 1px solid var(--line); }
 .editorial-cards article { padding: 22px 0; display: grid; grid-template-columns: 60px .6fr 1fr; gap: 24px; border-bottom: 1px solid var(--line); }
 .editorial-cards article > span { color: #7d8285; font-size: 10px; letter-spacing: .16em; }

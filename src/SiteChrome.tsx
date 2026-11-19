@@ -98,13 +98,13 @@ export function QuoteBand({ compact = false, title = 'Tell us what you want to m
   );
 }
 
-export function RelatedLinks({ slugs }: { slugs: string[] }) {
+export function RelatedLinks({ slugs, labels }: { slugs: string[]; labels?: Record<string, string> }) {
   return (
     <section className="related-links" aria-labelledby="related-heading">
       <p className="eyebrow" id="related-heading">CONTINUE YOUR RESEARCH</p>
       <div>
         {slugs.map((slug) => (
-          <a href={slug} key={slug}><span>{labelBySlug.get(slug) || slug}</span><ArrowUpRight size={20} /></a>
+          <a href={slug} key={slug}><span>{labels?.[slug] || labelBySlug.get(slug) || slug}</span><ArrowUpRight size={20} /></a>
         ))}
       </div>
     </section>
