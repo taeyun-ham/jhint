@@ -145,6 +145,8 @@ img { max-width: 100%; }
 .quote-band > div:last-child { align-self: end; }
 .quote-band > div:last-child > p { margin: 0 0 32px; color: #3f4a52; font-size: 17px; line-height: 1.65; }
 .quote-band.compact { padding-block: clamp(36px, 4vw, 64px); }
+/* 회청색 배경에서 보이도록 머리말을 진회색으로(작은 글자 대비 4.5 이상) */
+.quote-band .eyebrow { color: #2b343a; }
 
 .breadcrumbs { display: flex; gap: 10px; margin-bottom: 30px; color: #787d81; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
 .breadcrumbs a { border-bottom: 1px solid #aeb1b2; }
