@@ -116,7 +116,7 @@ export function HomePage() {
         <a className="text-link" href="/faq">VIEW ALL FREQUENTLY ASKED QUESTIONS <ArrowUpRight size={16} /></a>
       </section>
       <section className="guide-promo"><div><p className="eyebrow">BUYER GUIDES</p><h2>Compare your options before development begins.</h2></div><div><p>Compare OEM/ODM manufacturing processes, stock vs custom formulations and compatible packaging, and the key factors driving cost and timelines.</p><a className="button dark" href="/guides">EXPLORE ALL GUIDES <ArrowRight size={18} /></a></div></section>
-      <QuoteBand body="Share your product category, concept, target market, order quantity, target price, packaging direction, and launch timeline. We will review your brief and outline the next steps." />
+      <QuoteBand />
     </SiteLayout>
   );
 }
@@ -133,7 +133,7 @@ export function ContentPage({ page }: { page: MarketingPage }) {
           <p className="page-intro">{page.intro}</p>
         </header>
 
-        {page.products && <section className="format-section"><div><p className="eyebrow">PRODUCT FORMATS</p><h2>Formats we can discuss for your brief.</h2><p>Availability and development route depend on the formula, packaging, market and project scope.</p></div><ul>{page.products.map((product, i) => <li key={product}><span>{String(i + 1).padStart(2, '0')}</span>{product}</li>)}</ul></section>}
+        {page.products && <section className="format-section"><div><p className="eyebrow">PRODUCT FORMATS</p><h2>{page.productsHeading?.title ?? 'Formats we can discuss for your brief.'}</h2><p>{page.productsHeading?.body ?? 'Availability and development route depend on the formula, packaging, market and project scope.'}</p></div><ul>{page.products.map((product, i) => <li key={product}><span>{String(i + 1).padStart(2, '0')}</span>{product}</li>)}</ul></section>}
 
         {page.sections.map((section, sectionIndex) => (
           <section className={`editorial-section ${sectionIndex % 2 ? 'tinted' : ''}`} key={section.title}>
@@ -146,7 +146,7 @@ export function ContentPage({ page }: { page: MarketingPage }) {
           </section>
         ))}
         <RelatedLinks slugs={page.related} labels={page.relatedLabels} />
-        <QuoteBand compact {...page.quote} />
+        <QuoteBand compact />
       </article>
     </SiteLayout>
   );
