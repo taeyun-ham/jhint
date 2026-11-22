@@ -206,6 +206,11 @@ img { max-width: 100%; }
 .location-details address strong { font-weight: 650; }
 .location-details address span, .location-details > p:not(.eyebrow) { color: #5b656a; }
 .location-details > p:not(.eyebrow) { max-width: 470px; margin: 48px 0 30px; line-height: 1.65; }
+.location-contact { display: flex; align-items: center; gap: 28px; }
+.location-contact > div { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.location-whatsapp { color: #5b656a; font-size: 14px; letter-spacing: .02em; }
+.location-whatsapp a { color: var(--ink); font-weight: 650; border-bottom: 1px solid currentColor; }
+.location-qr { width: 132px; height: auto; padding: 8px; background: #fff; border: 1px solid #d9e0e3; }
 .location-map { min-width: 0; }
 .location-map iframe { width: 100%; min-height: 360px; display: block; border: 0; background: #c9d3d8; }
 .location-map-links { display: flex; flex-wrap: wrap; gap: 28px; padding: 25px 0; }
@@ -484,6 +489,7 @@ img { max-width: 100%; }
 .page-hero .eyebrow { margin-bottom: 24px; }
 .process-icon { width: clamp(88px, 7vw, 108px); height: clamp(88px, 7vw, 108px); }
 @media (max-width: 760px) {
+  .location-qr { display: none; }
   .site-header { height: 72px; }
   .site-header .primary-nav { max-height: calc(100dvh - 72px); }
   .home-hero h1 { font-size: clamp(48px, 12vw, 72px); }

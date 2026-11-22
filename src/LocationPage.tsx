@@ -1,10 +1,11 @@
-import { ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import { Breadcrumbs, SiteLayout, usePageMeta } from "./SiteChrome";
 
 const koreanAddress = "인천시 연수구 송도미래로 30 D-1311";
 const englishAddress =
   "D-1311, 30 Songdo Mirae-ro, Yeonsu-gu, Incheon, Republic of Korea";
 const mapQuery = encodeURIComponent("인천광역시 연수구 송도미래로 30");
+const whatsappUrl = "https://wa.me/821079706252";
 
 export default function LocationPage() {
   usePageMeta(
@@ -22,6 +23,7 @@ export default function LocationPage() {
         addressLocality: "Yeonsu-gu, Incheon",
         addressCountry: "KR",
       },
+      telephone: "+82-10-7970-6252",
     },
   );
 
@@ -36,7 +38,7 @@ export default function LocationPage() {
             <br />
             <em>in Korea.</em>
           </h1>
-          <p className="page-intro">Our company address is in Incheon Korea.</p>
+          <p className="page-intro">We're located in Incheon, Korea.</p>
         </header>
 
         <section
@@ -52,12 +54,36 @@ export default function LocationPage() {
               <span>{englishAddress}</span>
             </address>
             <p>
-              Planning a meeting? Please contact us before visiting so we can
-              coordinate the details.
+              Our office operates by appointment only. Please contact JH
+              International in advance to arrange a meeting.
             </p>
-            <a className="button dark" href="/inquiry">
-              CONTACT JH INTERNATIONAL <ArrowRight size={18} />
-            </a>
+            <div className="location-contact">
+              <div>
+                <a
+                  className="button dark"
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  CONTACT JH INTERNATIONAL <ArrowUpRight size={18} />
+                </a>
+                <span className="location-whatsapp">
+                  WhatsApp{" "}
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                    +82 10 7970 6252
+                  </a>
+                </span>
+              </div>
+              {/* QR은 PC에서만 보임(폰은 버튼으로 바로 연결) */}
+              <img
+                className="location-qr"
+                src="/images/contact/jh-international-whatsapp-qr.png"
+                alt="Scan to chat with JH International on WhatsApp"
+                width="434"
+                height="434"
+                loading="lazy"
+              />
+            </div>
           </div>
           <div className="location-map">
             <iframe
