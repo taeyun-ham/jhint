@@ -88,7 +88,7 @@ export default function LocationPage() {
           <div className="location-map">
             <iframe
               title="Map showing 30 Songdo Mirae-ro, Yeonsu-gu, Incheon"
-              src={`https://maps.google.com/maps?q=${mapQuery}&output=embed`}
+              src={`https://maps.google.com/maps?q=${mapQuery}&hl=en&output=embed`}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
