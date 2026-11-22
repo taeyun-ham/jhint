@@ -5,6 +5,8 @@ const koreanAddress = "인천시 연수구 송도미래로 30 D-1311";
 const englishAddress =
   "D-1311, 30 Songdo Mirae-ro, Yeonsu-gu, Incheon, Republic of Korea";
 const mapQuery = encodeURIComponent("인천광역시 연수구 송도미래로 30");
+// 구글은 등록 업체명으로 찾아야 카드에 회사 이름이 뜸(주소만 넣으면 "30"으로 표시)
+const googlePlaceQuery = encodeURIComponent("JH INTERNATIONAL 인천 연수구 송도미래로 30");
 const whatsappUrl = "https://wa.me/821079706252";
 
 export default function LocationPage() {
@@ -87,14 +89,14 @@ export default function LocationPage() {
           </div>
           <div className="location-map">
             <iframe
-              title="Map showing 30 Songdo Mirae-ro, Yeonsu-gu, Incheon"
-              src={`https://maps.google.com/maps?q=${mapQuery}&output=embed`}
+              title="Map showing JH International at 30 Songdo Mirae-ro, Yeonsu-gu, Incheon"
+              src={`https://maps.google.com/maps?q=${googlePlaceQuery}&hl=en&output=embed`}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
             <div className="location-map-links">
               <a
-                href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
+                href={`https://www.google.com/maps/search/?api=1&query=${googlePlaceQuery}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
