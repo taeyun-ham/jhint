@@ -2,7 +2,7 @@
 export const seoPages: Record<string, { title: string; description: string }> = {
   "/": {
     "title": "Korean Cosmetics OEM & ODM Manufacturer | JH International",
-    "description": "JH International supports beauty brands with Korean cosmetics OEM/ODM formulation, samples, packaging, filling, finished-product manufacturing and export."
+    "description": "Turnkey Korean cosmetics OEM/ODM for global brands: custom formulation, sampling, packaging, filling, compliance and export-ready delivery by JH International."
   },
   "/export": {
     "title": "Cosmetics Export Preparation & Shipping | JH International",
@@ -53,8 +53,8 @@ export const seoPages: Record<string, { title: string; description: string }> = 
     "description": "Explore the 10-step Korean cosmetics OEM and ODM process: consultation, formulas, samples, packaging, testing, production, inspection and export preparation."
   },
   "/compliance": {
-    "title": "Cosmetics Quality & Compliance Approach | JH International",
-    "description": "Korean cosmetics OEM and ODM quality and compliance: manufacturing controls, product testing, market requirements and documentation with JH International."
+    "title": "Global Cosmetics Regulatory Compliance | JH International",
+    "description": "Korean cosmetics OEM/ODM in CGMP, ISO 22716 and FDA-registered facilities, with FDA/MoCRA, EU CPSR/PIF, MFDS and export documents for global market entry."
   },
   "/faq": {
     "title": "Korean Cosmetics OEM ODM FAQ | JH International",
@@ -66,7 +66,7 @@ export const seoPages: Record<string, { title: string; description: string }> = 
   },
   "/location": {
     "title": "JH International Location in Songdo, Incheon | Visit Us",
-    "description": "Find JH International at D-1311, 30 Songdo Mirae-ro, Yeonsu-gu, Incheon, South Korea. View the address and open directions with JH International."
+    "description": "JH International is located at D-1311, 30 Songdo Mirae-ro, Incheon, South Korea. Visits are by appointment only. Contact us on WhatsApp to arrange a meeting."
   },
   "/guides": {
     "title": "Korean Cosmetics OEM ODM Guides | JH International",
