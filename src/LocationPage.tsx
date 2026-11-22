@@ -10,7 +10,7 @@ const whatsappUrl = "https://wa.me/821079706252";
 export default function LocationPage() {
   usePageMeta(
     "JH International Location in Songdo, Incheon | Visit Us",
-    "Find JH International at D-1311, 30 Songdo Mirae-ro, Yeonsu-gu, Incheon, South Korea. View the address and open directions.",
+    "JH International is located at D-1311, 30 Songdo Mirae-ro, Incheon, South Korea. Visits are by appointment only. Contact us on WhatsApp to arrange a meeting.",
     "/location",
     {
       "@context": "https://schema.org",

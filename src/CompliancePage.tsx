@@ -55,8 +55,8 @@ const governanceItems = [
 
 export default function CompliancePage() {
   usePageMeta(
-    'Cosmetics Quality & Compliance Approach | JH International',
-    'Learn how JH International approaches manufacturing controls, product testing, market requirements and project documentation for Korean cosmetics OEM and ODM projects.',
+    'Global Cosmetics Regulatory Compliance | JH International',
+    'Korean cosmetics OEM/ODM in CGMP, ISO 22716 and FDA-registered facilities, with FDA/MoCRA, EU CPSR/PIF, MFDS and export documents for global market entry.',
     '/compliance',
   );
 

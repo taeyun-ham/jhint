@@ -51,7 +51,7 @@ function EvidenceImage({ number, title, description, src, alt, className = '' }:
 export function HomePage() {
   usePageMeta(
     'Korean Cosmetics OEM & ODM Manufacturer | JH International',
-    'JH International supports beauty brands with Korean cosmetics OEM/ODM formulation, samples, packaging, filling, finished-product manufacturing and export.',
+    'Turnkey Korean cosmetics OEM/ODM for global brands: custom formulation, sampling, packaging, filling, compliance and export-ready delivery by JH International.',
     '/',
     {
       '@context': 'https://schema.org',
