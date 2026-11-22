@@ -18,6 +18,8 @@ export type MarketingPage = {
   metaTitle: string;
   metaDescription: string;
   products?: string[];
+  // PRODUCT FORMATS 구역 제목·본문(생략 시 공통값)
+  productsHeading?: { title: string; body: string };
   sections: PageSection[];
   related: string[];
   // 페이지별 관련 링크 이름·마지막 문의 구역 문구(생략 시 공통값)
@@ -115,6 +117,42 @@ const commonCategorySections: PageSection[] = [
     ],
   },
 ];
+
+// 카테고리별로 공통 틀 대신 쓸 문구(요구사항 7: Makeup)
+const categoryPageOverrides: Partial<Record<string, Partial<MarketingPage>>> = {
+  '/makeup': {
+    title: 'Custom color cosmetics',
+    accent: 'formulation and manufacturing.',
+    intro: 'End-to-end development engineered for precise shade matching, pigment payoff, texture, and wear.',
+    productsHeading: {
+      title: 'Color cosmetics tailored to your brief.',
+      body: 'Formula availability and shade customization scale based on your packaging, component compatibility, and target market.',
+    },
+    sections: [
+      {
+        eyebrow: 'DEVELOPMENT ROUTES',
+        title: 'Stock platform or custom development',
+        body: [
+          'A proven base formula speeds up your launch with accessible initial volumes and ready-to-adapt shade ranges. Choosing a bespoke build gives you full control to engineer custom pigments, finish, and wear around your brand’s aesthetic.',
+          'We recommend the right approach after reviewing your shade benchmarks, component selection, and launch timeline.',
+        ],
+      },
+      {
+        eyebrow: 'FROM BRIEF TO PRODUCT',
+        title: 'A connected manufacturing process',
+        items: [
+          { title: 'Brief & benchmark', body: 'Define your target customer, shade references, price positioning, and wear expectations.' },
+          { title: 'Formula & sample', body: 'Iterate on pigment payoff, undertone accuracy, texture, finish, and application feel.' },
+          { title: 'Pack & produce', body: 'Verify component and applicator compatibility, bulk filling, assembly, and retail-ready presentation.' },
+        ],
+      },
+    ],
+    quote: {
+      title: 'Tell us what you want to make.',
+      body: 'Share your shade vision, component preferences, and target launch window. Our team will evaluate your brief and map out your next steps to production.',
+    },
+  },
+};
 
 export const marketingPages: MarketingPage[] = [
   {
@@ -231,6 +269,7 @@ export const marketingPages: MarketingPage[] = [
     products: [...category.formats],
     sections: commonCategorySections,
     related: ['/formulation', '/packaging', '/process', '/inquiry'],
+    ...categoryPageOverrides[category.slug],
   })),
   {
     slug: '/formulation',

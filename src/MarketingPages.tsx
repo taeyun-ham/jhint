@@ -133,7 +133,7 @@ export function ContentPage({ page }: { page: MarketingPage }) {
           <p className="page-intro">{page.intro}</p>
         </header>
 
-        {page.products && <section className="format-section"><div><p className="eyebrow">PRODUCT FORMATS</p><h2>Formats we can discuss for your brief.</h2><p>Availability and development route depend on the formula, packaging, market and project scope.</p></div><ul>{page.products.map((product, i) => <li key={product}><span>{String(i + 1).padStart(2, '0')}</span>{product}</li>)}</ul></section>}
+        {page.products && <section className="format-section"><div><p className="eyebrow">PRODUCT FORMATS</p><h2>{page.productsHeading?.title ?? 'Formats we can discuss for your brief.'}</h2><p>{page.productsHeading?.body ?? 'Availability and development route depend on the formula, packaging, market and project scope.'}</p></div><ul>{page.products.map((product, i) => <li key={product}><span>{String(i + 1).padStart(2, '0')}</span>{product}</li>)}</ul></section>}
 
         {page.sections.map((section, sectionIndex) => (
           <section className={`editorial-section ${sectionIndex % 2 ? 'tinted' : ''}`} key={section.title}>

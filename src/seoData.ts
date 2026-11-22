@@ -21,8 +21,8 @@ export const seoPages: Record<string, { title: string; description: string }> = 
     "description": "Korean skincare OEM and ODM manufacturing for international brands: formulas, samples, moisturisers, serums, cleansers, packaging and finished products."
   },
   "/makeup": {
-    "title": "Korean Makeup Manufacturer & OEM ODM | JH International",
-    "description": "Korean makeup and colour cosmetics OEM and ODM manufacturing: shade, texture, finish, formula development, samples and packaging for international brands."
+    "title": "Korean Makeup & Color Cosmetics OEM ODM | JH International",
+    "description": "Korean makeup OEM/ODM: custom color cosmetics formulation and manufacturing for precise shade matching, pigment payoff, texture and wear, from stock to bespoke."
   },
   "/sun-care": {
     "title": "Korean Sun Care Manufacturer & OEM ODM | JH International",
