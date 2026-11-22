@@ -100,7 +100,7 @@ export function QuoteBand({ compact = false, title = 'Tell us what you want to m
 
 export function RelatedLinks({ slugs, labels }: { slugs: string[]; labels?: Record<string, string> }) {
   return (
-    <section className="related-links" aria-labelledby="related-heading">
+    <section className={`related-links${slugs.length === 3 ? ' is-three' : ''}`} aria-labelledby="related-heading">
       <p className="eyebrow" id="related-heading">CONTINUE YOUR RESEARCH</p>
       <div>
         {slugs.map((slug) => (

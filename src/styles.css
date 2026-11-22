@@ -259,6 +259,8 @@ img { max-width: 100%; }
 .related-links > div { display: grid; grid-template-columns: repeat(4, 1fr); border-left: 1px solid var(--line); border-top: 1px solid var(--line); }
 .related-links a { min-height: 72px; padding: 22px; display: flex; justify-content: space-between; align-items: center; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 14px; font-weight: 650; }
 .related-links a:hover { background: var(--ink); color: white; }
+/* 링크가 3개면 3칸으로 꽉 채움(2칸 화면에선 마지막 칸을 한 줄 전체로) */
+@media (min-width: 1061px) { .related-links.is-three > div { grid-template-columns: repeat(3, 1fr); } }
 
 .process-stages { padding: clamp(35px, 3.85vw, 61px) clamp(24px, 4.4vw, 76px); background: #e5e7e4; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .process-stages-heading { margin-bottom: clamp(24px, 2.5vw, 36px); }
@@ -410,6 +412,7 @@ img { max-width: 100%; }
   .compliance-market-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .capability-grid { grid-template-columns: repeat(2, 1fr); }
   .related-links > div { grid-template-columns: repeat(2, 1fr); }
+  .related-links.is-three a:last-child { grid-column: 1 / -1; }
   .manufacturing-image-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
