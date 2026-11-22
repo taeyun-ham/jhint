@@ -24,6 +24,7 @@ export type MarketingPage = {
   related: string[];
   // 페이지별 관련 링크 이름·마지막 문의 구역 문구(생략 시 공통값)
   relatedLabels?: Record<string, string>;
+  quote?: { title?: string; body?: string };
 };
 
 export const categories = [
@@ -146,6 +147,10 @@ const categoryPageOverrides: Partial<Record<string, Partial<MarketingPage>>> = {
         ],
       },
     ],
+    quote: {
+      title: 'Tell us what you want to make.',
+      body: 'Share your shade vision, component preferences, and target launch window. Our team will evaluate your brief and map out your next steps to production.',
+    },
   },
 };
 
@@ -219,6 +224,10 @@ export const marketingPages: MarketingPage[] = [
     ],
     related: ['/oem-odm', '/location', '/inquiry'],
     relatedLabels: { '/oem-odm': 'OEM/ODM SERVICE', '/location': 'OUR LOCATION', '/inquiry': 'MAKE AN INQUIRY' },
+    quote: {
+      title: 'Tell us what you would like to create with us.',
+      body: 'Share your product scope, target markets, estimated volumes, packaging direction, and launch timeline. Our Korean R&D and commercial team will review your brief and provide a tailored feasibility plan, pricing, and the next steps.',
+    },
   },
   {
     slug: '/oem-odm',

@@ -82,16 +82,16 @@ export function Breadcrumbs({ current }: { current: string }) {
   );
 }
 
-// 모든 페이지 공통 문구(요구사항 7 M-5)
-export function QuoteBand({ compact = false }: { compact?: boolean }) {
+// 페이지별로 제목·본문을 바꿀 수 있음(생략 시 공통 문구)
+export function QuoteBand({ compact = false, title = 'Tell us what you want to make.', body = 'Share your product category, market, quantity, target price, packaging direction and launch timing. We will review the brief and outline the next steps.' }: { compact?: boolean; title?: string; body?: string }) {
   return (
     <section className={`quote-band${compact ? ' compact' : ''}`}>
       <div>
         <p className="eyebrow light">START YOUR PRODUCT DEVELOPMENT</p>
-        <h2>Tell us what you want to make.</h2>
+        <h2>{title}</h2>
       </div>
       <div>
-        <p>Share your shade vision, component preferences, and target launch window. Our team will evaluate your brief and map out your next steps to production.</p>
+        <p>{body}</p>
         <a className="button acid" href="/inquiry">REQUEST AN OEM / ODM QUOTATION <ArrowRight size={18} /></a>
       </div>
     </section>

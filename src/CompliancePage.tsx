@@ -107,7 +107,11 @@ export default function CompliancePage() {
             ))}
           </ol>
         </section>
-        <QuoteBand compact />
+        <QuoteBand
+          compact
+          title="Tell us what you're building."
+          body="Share your product scope, target markets, estimated volumes, packaging direction, and launch timeline. Our Korean R&D and regulatory team will review your brief and outline feasibility, compliance steps, and next actions."
+        />
       </article>
     </SiteLayout>
   );

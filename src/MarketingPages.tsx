@@ -116,7 +116,7 @@ export function HomePage() {
         <a className="text-link" href="/faq">VIEW ALL FREQUENTLY ASKED QUESTIONS <ArrowUpRight size={16} /></a>
       </section>
       <section className="guide-promo"><div><p className="eyebrow">BUYER GUIDES</p><h2>Compare your options before development begins.</h2></div><div><p>Compare OEM/ODM manufacturing processes, stock vs custom formulations and compatible packaging, and the key factors driving cost and timelines.</p><a className="button dark" href="/guides">EXPLORE ALL GUIDES <ArrowRight size={18} /></a></div></section>
-      <QuoteBand />
+      <QuoteBand body="Share your product category, concept, target market, order quantity, target price, packaging direction, and launch timeline. We will review your brief and outline the next steps." />
     </SiteLayout>
   );
 }
@@ -146,7 +146,7 @@ export function ContentPage({ page }: { page: MarketingPage }) {
           </section>
         ))}
         <RelatedLinks slugs={page.related} labels={page.relatedLabels} />
-        <QuoteBand compact />
+        <QuoteBand compact {...page.quote} />
       </article>
     </SiteLayout>
   );
