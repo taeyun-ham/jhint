@@ -193,11 +193,11 @@ export function ProcessPage() {
 }
 
 export function FaqPage() {
-  usePageMeta('Korean Cosmetics OEM ODM FAQ | JH International', 'Answers about Korean cosmetics OEM and ODM, MOQ, formulas, samples, private label, packaging, export, lead time and quotations.', '/faq', {
+  usePageMeta('Korean Cosmetics OEM ODM FAQ | JH International', 'Korean cosmetics OEM/ODM buyer FAQ: manufacturing in South Korea, MOQs, custom formulation, samples, private label, packaging, export and development timelines.', '/faq', {
     '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(([question, answer]) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })),
   });
   return (
-    <SiteLayout><article className="content-page"><header className="page-hero has-background" style={pageHeroStyle('/images/manufacturing/korean-cosmetics-quality-control-korea-v2-optimized.webp')}><Breadcrumbs current="FAQ" /><p className="eyebrow">KOREAN COSMETICS OEM / ODM FAQ</p><h1>What international buyers<br /><em>need to know.</em></h1><p className="page-intro">Clear starting answers about development, MOQ, samples, packaging, manufacturing and export-related project planning.</p></header>
+    <SiteLayout><article className="content-page"><header className="page-hero has-background" style={pageHeroStyle('/images/manufacturing/korean-cosmetics-quality-control-korea-v2-optimized.webp')}><Breadcrumbs current="FAQ" /><p className="eyebrow">KOREAN COSMETICS OEM / ODM – INTERNATIONAL BUYER FAQ</p><h1>What international buyers<br /><em>need to know.</em></h1><p className="page-intro">Practical answers about custom formulation, manufacturing minimum order quantities, product sampling, packaging, production timelines and export coordination in South Korea.</p></header>
       <section className="faq-page-list">{faqs.map(([q, a], i) => <details key={q} open={i === 0}><summary><span>{String(i + 1).padStart(2, '0')}</span><h2>{q}</h2><b>+</b></summary><p>{a}</p></details>)}</section>
       <RelatedLinks slugs={['/oem-odm', '/moq', '/process', '/inquiry']} /><QuoteBand compact />
     </article></SiteLayout>

@@ -58,7 +58,7 @@ export const seoPages: Record<string, { title: string; description: string }> = 
   },
   "/faq": {
     "title": "Korean Cosmetics OEM ODM FAQ | JH International",
-    "description": "Korean cosmetics OEM and ODM FAQ: MOQ, formulas, samples, private label, packaging, export, lead times and quotations answered by JH International."
+    "description": "Korean cosmetics OEM/ODM buyer FAQ: manufacturing in South Korea, MOQs, custom formulation, samples, private label, packaging, export and development timelines."
   },
   "/inquiry": {
     "title": "Request a Korean Cosmetics OEM ODM Quotation | JH International",
