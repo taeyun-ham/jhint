@@ -11,4 +11,6 @@
     "run_worker_first": ["/api/*"],
   },
   "observability": { "enabled": true },
+  // 대시보드에 넣은 텍스트 변수(INQUIRY_TO_EMAILS 등)를 배포 때 지우지 않음 — 2026-11-23 문의 메일 503 재발 방지
+  "keep_vars": true,
 }
