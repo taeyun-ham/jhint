@@ -99,7 +99,7 @@ export default function InquiryForm() {
 
       <Section number="01" title="CLIENT & PROJECT INFORMATION">
         <TextField label="Company / Brand Name" name="company_brand" required />
-        <TextField label="Full Name" name="full_name" required />
+        <TextField label="Full Name" name="full_name" required placeholder="or Contact Name *" />
         <TextField label="Job Title / Role" name="job_title" />
         <TextField label="Email" name="email" type="email" required />
         <TextField label="Phone Number (Including Country Code)" name="phone" type="tel" />
