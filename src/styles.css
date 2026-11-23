@@ -220,21 +220,31 @@ img { max-width: 100%; }
 .guide-hero { --page-hero-image: url('/images/editorial/korean-cosmetics-buyer-guides-hero-optimized.webp'); }
 .guide-hero.has-background::before { background-position: 69% center; }
 .guide-hero h1 { max-width: 1100px; }
-.guide-list { padding: clamp(36px, 4.4vw, 66px) clamp(24px, 7vw, 120px); background: var(--paper); }
-.guide-list a { padding: 24px 0; display: grid; grid-template-columns: 70px 1fr 28px; gap: 22px; align-items: start; border-top: 1px solid var(--line); }
-.guide-list a:last-child { border-bottom: 1px solid var(--line); }
-.guide-list a > span, .guide-article section > span { color: #7c858b; font-size: 11px; letter-spacing: .16em; }
-.guide-list h2 { margin: 0 0 12px; font-size: clamp(27px, 3vw, 48px); letter-spacing: -.045em; }
-.guide-list p { max-width: 760px; margin: 0; color: #626a6f; font-size: 16px; line-height: 1.6; }
-.guide-list a:hover h2, .guide-next a:hover { text-decoration: underline; text-underline-offset: 5px; }
-.guide-article { padding: clamp(39px, 4.95vw, 74px) clamp(24px, 7vw, 120px); display: grid; grid-template-columns: .4fr 1fr; gap: 9vw; }
-.guide-article-label { display: flex; flex-direction: column; align-items: start; gap: 28px; }
-.guide-article section { padding: 0 0 50px; margin-bottom: 50px; border-bottom: 1px solid var(--line); }
-.guide-article section h2 { max-width: 800px; margin: 14px 0 24px; font-size: clamp(31px, 3.5vw, 56px); line-height: 1.05; letter-spacing: -.05em; }
-.guide-article section p { max-width: 810px; margin: 0; color: #555d62; font-size: clamp(17px, 1.4vw, 21px); line-height: 1.7; }
-.guide-next { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-.guide-next h2 { flex-basis: 100%; margin: 0 0 12px; font-size: 25px; letter-spacing: -.04em; }
-.guide-next a { display: inline-flex; align-items: center; gap: 8px; padding: 13px 17px; border: 1px solid var(--line); font-size: 13px; text-transform: capitalize; }
+.guide-accordion { padding: clamp(36px, 4.4vw, 66px) clamp(24px, 7vw, 120px); background: var(--paper); }
+.guide-item { border-top: 1px solid var(--line); scroll-margin-top: 24px; }
+.guide-item:last-child { border-bottom: 1px solid var(--line); }
+.guide-item summary { padding: 24px 0; display: grid; grid-template-columns: 70px 1fr 28px; gap: 22px; align-items: center; cursor: pointer; list-style: none; }
+.guide-item summary::-webkit-details-marker { display: none; }
+.guide-item summary > span { color: #7c858b; font-size: 11px; letter-spacing: .16em; }
+.guide-item summary h2 { margin: 0; font-size: clamp(25px, 2.6vw, 42px); line-height: 1.1; letter-spacing: -.045em; }
+.guide-item summary:hover h2 { text-decoration: underline; text-underline-offset: 5px; }
+.guide-item summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+/* + / − 아이콘: 가로선은 늘 보이고, 세로선은 접혔을 때만 */
+.guide-item summary i { position: relative; width: 22px; height: 22px; justify-self: end; }
+.guide-item summary i::before, .guide-item summary i::after { content: ''; position: absolute; left: 50%; top: 50%; background: currentColor; transform: translate(-50%, -50%); }
+.guide-item summary i::before { width: 20px; height: 1.5px; }
+.guide-item summary i::after { width: 1.5px; height: 20px; }
+.guide-item[open] summary i::after { display: none; }
+.guide-body { max-width: 900px; padding: 0 0 44px 92px; }
+.guide-body p, .guide-body li { color: #555d62; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.7; }
+.guide-body p { margin: 0 0 14px; }
+.guide-body .guide-intro { margin-bottom: 30px; color: #2f363b; font-size: clamp(18px, 1.4vw, 21px); }
+.guide-body section { padding: 22px 0 8px; border-top: 1px solid var(--line); }
+.guide-body h3 { margin: 0 0 12px; font-size: clamp(19px, 1.5vw, 23px); letter-spacing: -.03em; }
+.guide-body ul { margin: 0 0 14px; padding-left: 20px; }
+.guide-body li { margin-bottom: 6px; }
+.guide-body li strong { color: #2f363b; font-weight: 650; }
+.guide-body .guide-note { margin: 18px 0 0; padding: 16px 20px; background: #e8ecee; color: #2f363b; }
 
 .format-section { padding: clamp(44px, 4.95vw, 80px) clamp(24px, 7vw, 120px); display: grid; grid-template-columns: .78fr 1.22fr; gap: 10vw; background: #aab9c4; }
 .format-section h2 { margin: 0 0 30px; font-size: clamp(43px, 4.8vw, 78px); line-height: .95; letter-spacing: -.055em; }
@@ -433,10 +443,10 @@ img { max-width: 100%; }
   .compliance-standards section, .compliance-standards section:last-child { min-height: 0; }
   .compliance-governance li { grid-template-columns: 44px 1fr; }
   .compliance-review section, .compliance-review section:last-child { grid-column: auto; min-height: 205px; }
-  .home-hero, .category-section, .journey-section, .rnd-section, .trust-section, .quote-band, .guide-promo, .guide-article, .location-content, .positioning-section > div, .format-section, .editorial-section, .inquiry-hero { grid-template-columns: 1fr; }
+  .home-hero, .category-section, .journey-section, .rnd-section, .trust-section, .quote-band, .guide-promo, .location-content, .positioning-section > div, .format-section, .editorial-section, .inquiry-hero { grid-template-columns: 1fr; }
   .location-map iframe { min-height: 60vw; }
-  .guide-list a { grid-template-columns: 36px 1fr 22px; gap: 14px; }
-  .guide-article { gap: 48px; }
+  .guide-item summary { grid-template-columns: 30px 1fr 22px; gap: 14px; padding: 20px 0; }
+  .guide-body { padding: 0 0 32px; }
   .home-hero-copy { min-height: 0; padding-block: 36px; }
   .home-hero h1 { font-size: clamp(55px, 15vw, 82px); }
   .home-hero-visual { min-height: 60vw; }
@@ -489,7 +499,6 @@ img { max-width: 100%; }
 .compliance-hero { padding-bottom: clamp(40px, 5vw, 72px); }
 .compliance-hero .breadcrumbs { margin-bottom: 32px; }
 .compliance-intro { margin: 28px auto 36px; }
-.guide-article section { padding-bottom: 28px; margin-bottom: 28px; }
 .eyebrow { margin-bottom: 22px; }
 .page-hero .eyebrow { margin-bottom: 24px; }
 .process-icon { width: clamp(88px, 7vw, 108px); height: clamp(88px, 7vw, 108px); }

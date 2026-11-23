@@ -18,6 +18,6 @@ export function heroImageForPath(path: string) {
   if (path === '/faq') return '/images/manufacturing/korean-cosmetics-quality-control-korea-v2-optimized.webp';
   if (path === '/inquiry') return '/images/manufacturing/korean-skincare-oem-formulation-laboratory-v2-optimized.webp';
   if (path === '/location') return '/images/editorial/jh-international-korea-world-map-hero-optimized.webp';
-  if (path === '/guides' || path.startsWith('/guides/')) return '/images/editorial/korean-cosmetics-buyer-guides-hero-optimized.webp';
+  if (path === '/guides') return '/images/editorial/korean-cosmetics-buyer-guides-hero-optimized.webp';
   return pageHeroImages[path];
 }

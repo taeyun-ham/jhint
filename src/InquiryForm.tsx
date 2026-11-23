@@ -11,7 +11,7 @@ const categories: Array<{ value: Category; label: string; sub: string }> = [
 ];
 
 const common = {
-  price: ['Mass', 'Mid', 'Premium', 'Luxury'],
+  price: ['Mass', 'Mid-Market', 'Premium', 'Luxury'],
 };
 
 const categoryFields = {
@@ -30,18 +30,15 @@ function Section({ number, title, children }: { number: string; title: string; c
 }
 
 function TextField({ label, name, type = 'text', required = false, placeholder }: { label: string; name: string; type?: string; required?: boolean; placeholder?: string }) {
-  const isDate = type === 'date';
   return (
     <label className="form-field">
       <span>{label}{required && <b> *</b>}</span>
       <input
         name={name}
-        type={isDate ? 'text' : type}
+        type={type}
         required={required}
-        placeholder={isDate ? 'YYYY-MM-DD' : placeholder}
-        pattern={isDate ? '\\d{4}-\\d{2}-\\d{2}' : undefined}
-        inputMode={isDate ? 'numeric' : undefined}
-        onInvalid={(event) => event.currentTarget.setCustomValidity(isDate ? 'Please enter the date in YYYY-MM-DD format.' : 'Please complete this field.')}
+        placeholder={placeholder}
+        onInvalid={(event) => event.currentTarget.setCustomValidity('Please complete this field.')}
         onInput={(event) => event.currentTarget.setCustomValidity('')}
       />
     </label>
@@ -102,13 +99,13 @@ export default function InquiryForm() {
 
       <Section number="01" title="CLIENT & PROJECT INFORMATION">
         <TextField label="Company / Brand Name" name="company_brand" required />
-        <TextField label="Contact Person" name="contact_person" required />
-        <TextField label="Position" name="position" />
+        <TextField label="Full Name" name="full_name" required />
+        <TextField label="Job Title / Role" name="job_title" />
         <TextField label="Email" name="email" type="email" required />
-        <TextField label="Phone" name="phone" required />
-        <TextField label="Country / Target Market(s)" name="country_target_markets" required />
-        <label className="form-field"><span>Brand Status</span><select name="brand_status"><option>Existing Brand</option><option>New Brand</option></select></label>
-        <TextField label="Target Launch Date" name="target_launch_date" type="date" />
+        <TextField label="Phone Number (Including Country Code)" name="phone" type="tel" />
+        <TextField label="Target Market(s)" name="target_markets" required placeholder="e.g., South Korea, US, EU, Global" />
+        <label className="form-field"><span>Brand Status</span><select name="brand_status"><option>Existing Brand</option><option>New Brand (Pre-Launch)</option><option>Distributor</option></select></label>
+        <TextField label="Estimated Launch Timeline" name="launch_timeline" placeholder="YYYY-MM or Q3 2026" />
       </Section>
 
       <Section number="02" title="PRODUCT & FORMAT">
@@ -118,10 +115,9 @@ export default function InquiryForm() {
       </Section>
 
       <Section number="03" title="COMMERCIAL OVERVIEW">
-        <TextField label="Estimated Initial Quantity" name="initial_quantity" />
-        <TextField label="Expected Annual Volume" name="annual_volume" />
-        <TextField label="Target MOQ" name="target_moq" />
-        <Choices label="Target Price Positioning" name="price_positioning" options={common.price} />
+        <TextField label="Estimated Initial Quantity" name="initial_quantity" placeholder="e.g., 3,000 – 5,000 units" />
+        <TextField label="Expected Annual Volume" name="annual_volume" placeholder="e.g., 15,000 units / year" />
+        <Choices label="Target Retail Positioning" name="retail_positioning" options={common.price} />
       </Section>
 
       <div className="form-consent">

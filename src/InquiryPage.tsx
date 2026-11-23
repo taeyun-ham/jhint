@@ -10,11 +10,11 @@ export default function InquiryPage() {
           <div>
             <Breadcrumbs current="Inquiry" />
             <p className="eyebrow">R&amp;D PRODUCT DEVELOPMENT INQUIRY</p>
-            <h1>Build a useful<br /><em>product brief.</em></h1>
+            <h1>Let’s build a clear<br /><em>product brief.</em></h1>
           </div>
           <div className="inquiry-hero-copy">
-            <p>Tell us what you want to create. We will review your brief for the appropriate development route, manufacturing direction and next commercial steps.</p>
-            <ul><li>Product and target market</li><li>Quantity and target price</li><li>Formula and sensory direction</li><li>Packaging and launch timing</li></ul>
+            <p>Tell us what you want to create. We’ll review your brief to determine the right development route, manufacturing direction, and commercial next steps.</p>
+            <ul><li>Product &amp; target market</li><li>Quantity &amp; target price</li><li>Formula &amp; sensory direction</li><li>Packaging &amp; launch timing</li></ul>
           </div>
         </section>
         <InquiryForm />

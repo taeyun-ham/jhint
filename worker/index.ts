@@ -42,7 +42,7 @@ async function sendInquiry(request: Request, env: Env) {
       return Response.json({ message: 'Your inquiry has been received.' });
     }
 
-    const required = ['category', 'company_brand', 'contact_person', 'email', 'phone', 'country_target_markets', 'privacy_consent'];
+    const required = ['category', 'company_brand', 'full_name', 'email', 'target_markets', 'privacy_consent'];
     for (const field of required) {
       if (!stringValue(form.get(field)).trim()) {
         return Response.json({ message: `Please complete ${labelFor(field)}.` }, { status: 400 });
