@@ -26,15 +26,15 @@ export const seoPages: Record<string, { title: string; description: string }> = 
   },
   "/sun-care": {
     "title": "Korean Sun Care Manufacturer & OEM ODM | JH International",
-    "description": "Korean sun care OEM and ODM manufacturing: sun cream, serum, stick, cushion, spray and after-sun formats, with formula, samples, packaging and testing."
+    "description": "Korean sun care OEM/ODM: custom UV protection formulation and manufacturing for weightless wear, broad-spectrum defense and regional compliance."
   },
   "/hair-care": {
     "title": "Korean Hair Care Manufacturer & OEM ODM | JH International",
-    "description": "Korean hair and scalp care OEM and ODM manufacturing: shampoo, conditioner and treatments, with formula development, samples, packaging and finished products."
+    "description": "Korean hair care OEM/ODM: custom hair and scalp formulation and manufacturing, from daily cleansing and conditioning to targeted scalp and strand treatments."
   },
   "/body-care": {
     "title": "Korean Body Care Manufacturer & OEM ODM | JH International",
-    "description": "Korean body and personal care OEM and ODM manufacturing: body wash, lotion, cream and oils, with tailored formulas, fragrance, samples and packaging."
+    "description": "Korean body care OEM/ODM: custom body and personal care formulation and manufacturing for rich sensory textures, signature scents and functional packaging."
   },
   "/formulation": {
     "title": "Cosmetic Formulation & Product Development Korea | JH International",
@@ -71,37 +71,5 @@ export const seoPages: Record<string, { title: string; description: string }> = 
   "/guides": {
     "title": "Korean Cosmetics OEM ODM Guides | JH International",
     "description": "Practical guides to Korean cosmetics OEM, ODM, private label, formula and packaging choices, manufacturing costs and development timelines."
-  },
-  "/guides/oem-vs-odm": {
-    "title": "OEM vs ODM Cosmetics Manufacturing | JH International",
-    "description": "Compare OEM and ODM cosmetics manufacturing, development scope, formula ownership and questions to ask before a quotation with JH International."
-  },
-  "/guides/oem-vs-private-label": {
-    "title": "Korean OEM vs Private Label Cosmetics | JH International",
-    "description": "Compare defined OEM manufacturing specifications with private label product platforms and their customization options with JH International."
-  },
-  "/guides/stock-vs-custom-formula": {
-    "title": "Stock Formula vs Custom Formula | JH International",
-    "description": "Compare stock and custom cosmetic formulas, development scope, sample revisions, testing and production approvals in Korea with JH International."
-  },
-  "/guides/stock-vs-custom-packaging": {
-    "title": "Stock Packaging vs Custom Packaging | JH International",
-    "description": "Compare stock and custom cosmetic packaging: component availability, MOQ, lead times, decoration and formula compatibility with JH International."
-  },
-  "/guides/manufacturing-process": {
-    "title": "Korean Cosmetics Manufacturing Process Guide | JH International",
-    "description": "Learn how a Korean cosmetics project moves from brief and samples to production, inspection and export preparation with JH International."
-  },
-  "/guides/launch-cosmetic-brand-korea": {
-    "title": "Launch a Cosmetic Brand with Korean Manufacturing | JH International",
-    "description": "Build a product brief and plan formulation, packaging, approvals and production for a Korean-made cosmetics launch with JH International."
-  },
-  "/guides/cosmetic-manufacturing-cost": {
-    "title": "Cosmetic Manufacturing Cost in Korea | JH International",
-    "description": "Learn which formula, packaging, quantity, testing and delivery choices affect Korean cosmetics manufacturing quotations with JH International."
-  },
-  "/guides/cosmetic-development-timeline": {
-    "title": "Cosmetic Product Development Timeline | JH International",
-    "description": "Understand the milestones and dependencies that affect Korean cosmetics formulation, samples, packaging and production timing with JH International."
   }
 };

@@ -1,80 +1,168 @@
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { useEffect } from 'react';
 import { Breadcrumbs, QuoteBand, SiteLayout, usePageMeta } from './SiteChrome';
 
-export const guides = [
+// 목록 한 줄: 문자열 또는 [굵은 머리말, 설명]
+type GuideListItem = string | readonly [string, string];
+type GuideSection = { heading: string; paragraphs?: readonly string[]; list?: readonly GuideListItem[]; after?: string };
+type Guide = { slug: string; title: string; intro: string; sections: readonly GuideSection[]; note?: string };
+
+// 요구사항 12(2026-11-23): 8개 가이드를 /guides 한 페이지에서 펼쳐 보기. slug는 옛 주소(/guides/<slug>)와 같게 유지
+export const guides: readonly Guide[] = [
   {
-    slug: 'oem-vs-odm', title: 'OEM vs ODM cosmetics manufacturing', summary: 'Compare who brings the product specification, who develops the formula, and what to confirm before choosing a route.',
+    slug: 'oem-vs-odm',
+    title: 'OEM vs ODM Cosmetics Manufacturing',
+    intro: 'OEM and ODM are two approaches to cosmetics manufacturing, depending on how much product development support your brand requires.',
     sections: [
-      { heading: 'What changes between OEM and ODM?', text: 'OEM usually begins with a brand-defined formula or detailed specification that a manufacturing partner assesses and produces. ODM generally begins earlier: the development partner helps turn a concept into a formula, samples and a finished-product specification. These terms are used differently across suppliers, so the written scope matters more than the label.' },
-      { heading: 'When does each route fit?', text: 'OEM can suit a brand that already controls a tested formula and has clear manufacturing requirements. ODM can suit a team that has a consumer, benchmark and positioning in mind but needs support with formulation and product development. Both routes still need packaging, testing, quantity and target-market decisions.' },
-      { heading: 'Questions to ask before a quotation', text: 'Clarify formula ownership and transfer rights, sample rounds, testing responsibility, packaging sourcing, minimum quantities, approval milestones and which party holds the final specifications. Send your current formula status and target market with the brief.' },
-    ], related: ['/oem-odm', '/formulation', '/inquiry'],
+      { heading: 'OEM – Original Equipment Manufacturing', paragraphs: ['Suitable for brands with an established product concept, formulation or specifications. JH International coordinates manufacturing according to the agreed formula, product requirements and packaging specifications.'] },
+      { heading: 'ODM – Original Design Manufacturing', paragraphs: ['Ideal for brands requiring support to develop a product concept into a finished product. This includes custom formulation, ingredient selection, texture, colour, performance and packaging development.'] },
+      { heading: 'The JH International Approach', paragraphs: ["We specialise in customised product creation rather than supplying fixed product catalogues. Each project is developed according to the client's brand identity, target market, product expectations and commercial requirements."] },
+      { heading: 'Before Starting Your Project', paragraphs: ['Key considerations include:'], list: ['Product concept and category.', 'Target market and regulatory requirements.', 'Formulation and performance expectations.', 'Packaging and design.', 'Estimated quantities and target unit cost.'] },
+    ],
+    note: 'Formula ownership and intellectual property protections are established through the project agreement.',
   },
   {
-    slug: 'oem-vs-private-label', title: 'Korean OEM vs private label cosmetics', summary: 'Understand the trade-off between a defined manufacturing specification and an established product platform.',
+    slug: 'oem-vs-private-label',
+    title: 'Korean OEM vs Private Label Cosmetics',
+    intro: 'OEM and private label differ mainly in the level of product customisation and development involved.',
     sections: [
-      { heading: 'A difference in starting point', text: 'An OEM project normally starts from a brand-defined product specification. Private label often starts with an available formula or product platform that can be adapted within a supplier’s options. Ask which ingredients, texture, fragrance, claims, components and artwork can actually change.' },
-      { heading: 'Speed, differentiation and control', text: 'An established platform may reduce development work and may be easier to plan around available components. A more tailored OEM route can provide greater differentiation, but feasibility, validation, minimum quantities and timing need a closer review. Neither route guarantees a particular lead time or order size.' },
-      { heading: 'What to put in your brief', text: 'Include reference products, target retail price, expected first order, intended market and the parts of the product that must be unique. That allows a useful comparison of available platforms and custom work.' },
-    ], related: ['/oem-odm', '/moq', '/inquiry'],
+      { heading: 'OEM – Custom Manufacturing', paragraphs: ['OEM is designed for brands seeking greater control over their products. Formulations, ingredients, texture, fragrance, colours and packaging can be developed or specified according to the project requirements.'] },
+      { heading: 'Private Label – Existing Product Platforms', paragraphs: ['Private label typically uses an existing formulation or product platform offered by a manufacturer, with limited customisation options such as branding, packaging or selected product adjustments.'] },
+      { heading: 'The JH International Approach', paragraphs: ["We focus on customised OEM/ODM product development rather than supplying fixed private-label catalogues. Our objective is to create distinctive products tailored to each brand's identity, target market and commercial requirements."] },
+      { heading: 'What to Prepare', list: ['Product references or development concepts.', 'Desired formulation and product features.', 'Target market and retail positioning.', 'Packaging and design preferences.', 'Estimated order quantities and target unit cost.'] },
+    ],
   },
   {
-    slug: 'stock-vs-custom-formula', title: 'Stock formula vs custom formula', summary: 'Decide how much formulation work your concept needs and which tests follow from that decision.',
+    slug: 'stock-vs-custom-formula',
+    title: 'Stock Formula vs Custom Formula',
+    intro: 'Choosing between an existing formula and custom formulation depends on your product concept, desired performance, target market and level of customisation.',
     sections: [
-      { heading: 'What a stock formula offers', text: 'A stock formula is an existing development platform, not a promise that every ingredient, claim or market is already approved for your project. It can be a practical starting point if its texture and performance align with your brief.' },
-      { heading: 'What custom development adds', text: 'Custom formulation gives more room to shape ingredient direction, sensory feel, shade, fragrance and performance. It also introduces prototype review, revision and project-specific testing decisions. Greater customization may affect cost, quantity and launch timing.' },
-      { heading: 'How to compare them', text: 'Request samples against the same benchmark and evaluate the formula in its intended package. Confirm changes allowed, intellectual-property terms, stability and compatibility work, destination-market requirements and the approval point before production.' },
-    ], related: ['/formulation', '/oem-odm', '/inquiry'],
+      { heading: 'Stock Formula – Existing Development Platform', paragraphs: ['An existing formulation can provide a starting point when its texture, performance and characteristics meet your requirements. Adjustments may be possible depending on the formula and project specifications. Ingredient suitability and regulatory compliance must still be assessed for the intended market.'] },
+      { heading: 'Custom Formula – Tailored Development', paragraphs: ['Custom formulation allows greater control over ingredients, texture, colour, fragrance and product performance. Development includes laboratory sampling, evaluation and refinement, with project-specific testing requirements.'] },
+      { heading: 'The JH International Approach', paragraphs: ['We assess each project individually to determine the most suitable formulation route based on your product expectations, packaging, target market and commercial objectives.'] },
+      { heading: 'Before Approval', list: ['Confirm formulation specifications and samples.', 'Evaluate performance against agreed references.', 'Check packaging compatibility and stability requirements.', 'Review destination-market regulatory requirements.', 'Establish formula ownership and intellectual property terms.'] },
+    ],
+    note: 'Customisation, testing requirements and development timelines may affect the final MOQ and unit cost.',
   },
   {
-    slug: 'stock-vs-custom-packaging', title: 'Stock packaging vs custom packaging', summary: 'Compare component availability, brand distinction and the work required to make a pack production-ready.',
+    slug: 'stock-vs-custom-packaging',
+    title: 'Stock Packaging vs Custom Packaging',
+    intro: 'Packaging plays an important role in product presentation, brand identity, manufacturing costs and overall product compatibility.',
     sections: [
-      { heading: 'Starting with stock components', text: 'Stock bottles, jars and tubes can give a project an available starting point. Decoration, labels or cartons may still create a distinctive presentation. Availability, colour, closure fit and decoration minimums should be confirmed for the selected component.' },
-      { heading: 'Developing custom components', text: 'Custom moulds, materials, colours or applicators can make a product more distinctive, but may require tooling, component samples, higher minimums and longer sourcing time. A drawing alone does not establish filling or formula compatibility.' },
-      { heading: 'Approve the complete pack', text: 'Check the formula with its intended primary package, filling method, dispensing experience, decoration, shipping protection and applicable labelling requirements before final purchase commitments.' },
-    ], related: ['/packaging', '/moq', '/inquiry'],
+      { heading: 'Stock Packaging – Existing Packaging Options', paragraphs: ['Stock packaging uses existing packaging designs and specifications available through established suppliers. It can offer a more cost-effective solution, with selected options for colours, finishes, printing and branding, subject to supplier availability.'] },
+      { heading: 'Custom Packaging – Tailored Packaging Development', paragraphs: ["Custom packaging is developed around your brand's identity and product requirements. Options may include customised shapes, materials, colours, printing techniques, surface finishes and structural designs."] },
+      { heading: 'The JH International Approach', paragraphs: ['We provide turnkey packaging coordination, working with established packaging suppliers to identify and develop suitable packaging solutions for each project. Our team coordinates packaging selection, design specifications, printing and finishing applications.'] },
+      { heading: 'Important Considerations', list: ['Packaging type, materials and dimensions.', 'Printing methods and decorative finishes.', 'Product and packaging compatibility.', 'Supplier MOQ and production requirements.', 'Packaging costs and development timelines.'] },
+    ],
+    note: 'Packaging selection directly affects the final unit cost, MOQ and production schedule. All specifications are confirmed before final quotation and production.',
   },
   {
-    slug: 'manufacturing-process', title: 'Korean cosmetics manufacturing process', summary: 'Follow the decisions from the first product brief through samples, production and export preparation.',
+    slug: 'manufacturing-process',
+    title: 'Korean Cosmetics Manufacturing Process',
+    intro: 'From initial product concept to finished goods, every project follows a structured development, approval and manufacturing process.',
     sections: [
-      { heading: 'Development and approval', text: 'The brand shares the category, consumer, destination market, target price, quantity and benchmark. The development route is chosen, samples are reviewed and the formula and packaging specifications are approved.' },
-      { heading: 'Manufacturing and quality', text: 'Project-appropriate testing and quality requirements are confirmed before scheduled bulk production. The approved product is filled, assembled and inspected against the agreed specification.' },
-      { heading: 'Delivery preparation', text: 'Finished goods and available documentation are prepared for the agreed shipment route. Import, registration and market-entry obligations should be checked for the destination market and responsible importer.' },
-    ], related: ['/process', '/formulation', '/inquiry'],
+      { heading: '01. Product Development & Approval', paragraphs: ['The client provides the product concept, target market, benchmark references, estimated quantity and target price. JH International coordinates formulation development, laboratory sampling, packaging selection and revisions until the product specifications are approved.'] },
+      { heading: '02. Manufacturing & Quality Control', paragraphs: ['Following final approval, production is scheduled. Manufacturing includes bulk preparation, filling, assembly and quality inspections according to the agreed product specifications and applicable quality requirements.'] },
+      { heading: '03. Export & Delivery Preparation', paragraphs: ["Finished products undergo final checks and preparation for shipment. Available export and product documentation is coordinated according to the destination market and agreed shipping requirements. Import registration and market-entry compliance remain subject to the destination country's regulations."] },
+    ],
+    note: 'Important: Bulk production begins only after formulation and packaging approval, contract confirmation and receipt of the agreed initial deposit.',
   },
   {
-    slug: 'launch-cosmetic-brand-korea', title: 'How to launch a cosmetic brand with Korean manufacturing', summary: 'Build a usable product brief and plan the approvals needed before placing a production order.',
+    slug: 'launch-cosmetic-brand-korea',
+    title: 'How to Launch a Cosmetic Brand with Korean Manufacturing',
+    intro: 'Launching a cosmetic brand requires careful planning of product development, manufacturing requirements, costs and target-market regulations.',
     sections: [
-      { heading: 'Define the product and market', text: 'Start with the target consumer, sales country, product category, price position and a small number of reference products. Write down the performance and sensory features that matter most.' },
-      { heading: 'Choose a development route', text: 'Compare an established formula and pack with a more customized route. Request samples, assess the formula in its intended packaging and agree on the scope of revisions, testing and artwork.' },
-      { heading: 'Plan the commercial launch', text: 'Confirm minimum quantities by variant, the quotation scope, approval milestones, production schedule, importer responsibilities and available documentation. Your first order should reflect the whole launch plan, not just the factory unit price.' },
-    ], related: ['/oem-odm', '/process', '/inquiry'],
+      { heading: '01. Define Your Product & Target Market', paragraphs: ['Identify your product category, target consumer, sales market, brand positioning and desired retail price. Reference products can help communicate your expectations for formulation, performance, texture and appearance.'] },
+      { heading: '02. Develop & Approve Your Product', paragraphs: ['Select the appropriate OEM/ODM development route. Review laboratory samples, confirm formulation and packaging specifications, and complete the required revisions, artwork and testing arrangements before production approval.'] },
+      { heading: '03. Confirm Your Manufacturing & Launch Plan', paragraphs: ['Establish the required MOQ per formulation or shade, final unit pricing, packaging costs, production timeline, payment terms and export documentation. Ensure destination-market regulatory requirements and importer responsibilities are addressed before shipment.'] },
+      { heading: 'The JH International Approach', paragraphs: ['We support international brands from initial concept through custom product development, packaging coordination and manufacturing in South Korea. Each project is assessed according to its product requirements, target market and commercial objectives.'] },
+    ],
   },
   {
-    slug: 'cosmetic-manufacturing-cost', title: 'How much does cosmetic manufacturing cost in Korea?', summary: 'See which product and packaging choices change a quotation and what information makes estimates useful.',
+    slug: 'cosmetic-manufacturing-cost',
+    title: 'Cosmetic Manufacturing Costs in Korea',
+    intro: 'Cosmetic manufacturing costs are calculated according to the formulation, packaging and complete product specifications. Each project is quoted individually.',
     sections: [
-      { heading: 'Why there is no universal unit price', text: 'Cost depends on formula ingredients, fill size, testing, packaging components, decoration, quantity per variant, filling and assembly. Freight, duties, registration and other market-entry costs may sit outside the manufacturing quotation.' },
-      { heading: 'Compare quotations on the same basis', text: 'Check whether development, samples, tooling, artwork setup, testing, cartons, packing and delivery terms are included. A lower unit price is not directly comparable if important work is excluded.' },
-      { heading: 'How to request an estimate', text: 'Send the category, formula status, target market, first-order quantity by SKU, target retail position, package reference and desired launch date. A range can then be discussed against real assumptions and revised when specifications are approved.' },
-    ], related: ['/moq', '/packaging', '/inquiry'],
+      {
+        heading: 'How Is the Unit Price Calculated?',
+        paragraphs: ['The finished product unit price generally consists of:'],
+        list: [
+          ['Formula & Manufacturing:', 'Raw materials, formulation, bulk production and filling.'],
+          ['Primary Packaging:', 'Product containers, bottles, tubes, jars, pumps and closures.'],
+          ['Design Applications:', 'Printing, hot stamping, coating, labelling and other decorative finishes.'],
+          ['Secondary Packaging & Materials:', 'Unit boxes, inserts, shipping cartons, security seals and other required components.'],
+        ],
+        after: 'Additional costs may apply depending on product complexity, testing and specific project requirements.',
+      },
+      { heading: 'Key Cost Factors', list: ['Product formulation and ingredients.', 'Packaging materials and specifications.', 'Printing and decorative finishes.', 'MOQ per formulation or colour.', 'Production and quality requirements.'] },
+      { heading: 'Requesting an Accurate Quotation', paragraphs: ['Please provide your product concept, target market, estimated quantity per SKU or shade, packaging references, design requirements and target unit cost.'] },
+      { heading: 'The JH International Approach', paragraphs: ['We prepare quotations based on the complete product and packaging specifications. Preliminary estimates may be adjusted once the formulation, packaging components and design applications are confirmed.'] },
+    ],
+    note: 'International freight, import duties, local registration and other market-entry expenses are generally quoted separately.',
   },
   {
-    slug: 'cosmetic-development-timeline', title: 'How long does cosmetic product development take?', summary: 'Understand the milestones and dependencies that determine a realistic launch schedule.',
+    slug: 'cosmetic-development-timeline',
+    title: 'Cosmetic Product Development Timeline',
+    intro: 'Cosmetic product development involves several stages before mass production can begin. Timelines depend on formulation requirements, packaging specifications, testing and client approvals.',
     sections: [
-      { heading: 'Work that happens before production', text: 'Brief review, formula selection or development, sample rounds, package sourcing, compatibility and other project-specific checks happen before a production slot can be confirmed. Each approval may depend on the result of the previous stage.' },
-      { heading: 'What commonly changes the schedule', text: 'Custom components, tooling, multiple shades, sample revisions, test results, artwork changes and delayed approvals can extend timing. An available stock platform may simplify some steps, but still requires project review.' },
-      { heading: 'Build a schedule backward from launch', text: 'Share the desired launch date and destination market early. Agree on decision owners, sample feedback deadlines, testing, component delivery, production and shipping milestones. The final estimate should be specific to your approved brief.' },
-    ], related: ['/process', '/packaging', '/inquiry'],
+      { heading: '01. Product Development & Sampling', paragraphs: ['Initial consultation, formulation development, laboratory samples, sample evaluation and revisions. Packaging options and supplier availability are also reviewed during this stage.'] },
+      { heading: '02. Packaging, Testing & Final Approval', paragraphs: ['Finalise the formulation, packaging components, artwork and design applications. Complete applicable compatibility, stability and regulatory testing before confirming production specifications.'] },
+      { heading: '03. Manufacturing & Delivery', paragraphs: ['Following final sample and packaging approval, contract signing and receipt of the initial deposit, production can be scheduled. Manufacturing, quality control, packing and export preparation follow.'] },
+      { heading: 'What Can Affect the Timeline?', list: ['Custom formulation and ingredient requirements.', 'Packaging availability and customised components.', 'Multiple shades or product variations.', 'Sample revisions and testing requirements.', 'Artwork changes and delayed client approvals.', 'Component delivery and international shipping.'] },
+      {
+        heading: 'The JH International Approach',
+        paragraphs: [
+          'For standard skincare projects, estimated production lead time is generally 10–14 weeks, starting after sample approval, completed packaging design, contract signing and receipt of the 50% initial deposit.',
+          'Other product categories and customised projects may require different schedules. Development and sampling time, where applicable, must be considered separately.',
+          'We recommend planning backward from your intended launch date and allowing sufficient time for development, approvals, production and shipping.',
+        ],
+      },
+    ],
   },
-] as const;
+];
+
+// /guides#<slug>로 들어오면 그 항목을 펼치고 그 위치로 이동
+function openGuideFromHash() {
+  const slug = decodeURIComponent(window.location.hash.slice(1));
+  if (!guides.some((guide) => guide.slug === slug)) return;
+  const item = document.getElementById(slug);
+  if (!(item instanceof HTMLDetailsElement)) return;
+  item.open = true;
+  item.scrollIntoView({ block: 'start' });
+}
 
 export function GuidesPage() {
   usePageMeta('Korean Cosmetics OEM ODM Guides | JH International', 'Practical guides to Korean cosmetics OEM, ODM, private label, formula and packaging choices, manufacturing costs and development timelines.', '/guides');
-  return <SiteLayout><article className="content-page"><header className="page-hero has-background guide-hero"><Breadcrumbs current="Guides" /><p className="eyebrow">COSMETICS MANUFACTURING GUIDES</p><h1>Research the route.<br /><em>Plan your product.</em></h1><p className="page-intro">Compare development options and understand the decisions behind a Korean cosmetics project before requesting a quotation.</p></header><section className="guide-list" aria-label="Educational guides">{guides.map((guide, index) => <a href={`/guides/${guide.slug}`} key={guide.slug}><span>{String(index + 1).padStart(2, '0')}</span><div><h2>{guide.title}</h2><p>{guide.summary}</p></div><ArrowUpRight aria-hidden="true" /></a>)}</section><QuoteBand compact /></article></SiteLayout>;
-}
-
-export function GuidePage({ guide }: { guide: (typeof guides)[number] }) {
-  const path = `/guides/${guide.slug}`;
-  usePageMeta(`${guide.title} | JH International`, guide.summary, path, { '@context': 'https://schema.org', '@type': 'Article', headline: guide.title, description: guide.summary, mainEntityOfPage: `https://jhint.kr${path}`, publisher: { '@type': 'Organization', name: 'JH International' } });
-  return <SiteLayout><article className="content-page"><header className="page-hero has-background guide-hero"><nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/guides">Guides</a><span>/</span><span aria-current="page">{guide.title}</span></nav><p className="eyebrow">KOREAN COSMETICS BUYER GUIDE</p><h1>{guide.title}</h1><p className="page-intro">{guide.summary}</p></header><div className="guide-article"><div className="guide-article-label"><p className="eyebrow">THE BUYER'S VIEW</p><a className="text-link" href="/guides">ALL GUIDES <ArrowRight size={16} /></a></div><div>{guide.sections.map((section, index) => <section key={section.heading}><span>{String(index + 1).padStart(2, '0')}</span><h2>{section.heading}</h2><p>{section.text}</p></section>)}<div className="guide-next"><h2>Explore the next step</h2>{guide.related.map((slug) => <a key={slug} href={slug}>{slug === '/inquiry' ? 'Request an OEM / ODM quotation' : slug.slice(1).replaceAll('-', ' ')} <ArrowUpRight size={16} /></a>)}</div></div></div><QuoteBand compact /></article></SiteLayout>;
+  useEffect(() => {
+    openGuideFromHash();
+    window.addEventListener('hashchange', openGuideFromHash);
+    return () => window.removeEventListener('hashchange', openGuideFromHash);
+  }, []);
+  // 접힌 내용도 HTML에 그대로 들어감(details) — 검색·AI 수집용
+  return (
+    <SiteLayout>
+      <article className="content-page">
+        <header className="page-hero has-background guide-hero"><Breadcrumbs current="Guides" /><p className="eyebrow">COSMETICS MANUFACTURING GUIDES</p><h1>Research the route.<br /><em>Plan your product.</em></h1><p className="page-intro">Compare development options and understand the decisions behind a Korean cosmetics project before requesting a quotation.</p></header>
+        <section className="guide-accordion" aria-label="Manufacturing guides">
+          {guides.map((guide, index) => (
+            <details className="guide-item" id={guide.slug} key={guide.slug}>
+              <summary><span>{String(index + 1).padStart(2, '0')}</span><h2>{guide.title}</h2><i aria-hidden="true" /></summary>
+              <div className="guide-body">
+                <p className="guide-intro">{guide.intro}</p>
+                {guide.sections.map((section) => (
+                  <section key={section.heading}>
+                    <h3>{section.heading}</h3>
+                    {section.paragraphs?.map((text) => <p key={text}>{text}</p>)}
+                    {section.list && <ul>{section.list.map((item) => typeof item === 'string' ? <li key={item}>{item}</li> : <li key={item[0]}><strong>{item[0]}</strong> {item[1]}</li>)}</ul>}
+                    {section.after && <p>{section.after}</p>}
+                  </section>
+                ))}
+                {guide.note && <p className="guide-note">{guide.note}</p>}
+              </div>
+            </details>
+          ))}
+        </section>
+        <QuoteBand compact />
+      </article>
+    </SiteLayout>
+  );
 }

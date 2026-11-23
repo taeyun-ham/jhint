@@ -67,7 +67,7 @@ export const categories = [
     title: 'Body Care',
     description: 'Body and personal care concepts with tailored texture, fragrance direction and packaging.',
     homeDescription: 'Body and personal care formulations customized around texture, signature fragrance, and functional packaging.',
-    formats: ['Body wash', 'Body lotion', 'Body cream', 'Body scrub', 'Hand care', 'Foot care', 'Body oil', 'Body mist'],
+    formats: ['Body wash', 'Body scrub', 'Body lotion', 'Body cream', 'Body oil', 'Body mist', 'Hand care', 'Foot care'],
   },
 ] as const;
 
@@ -118,7 +118,7 @@ const commonCategorySections: PageSection[] = [
   },
 ];
 
-// 카테고리별로 공통 틀 대신 쓸 문구(요구사항 6: Skin Care, 요구사항 7: Makeup)
+// 카테고리별로 공통 틀 대신 쓸 문구(요구사항 6 Skin Care, 7 Makeup, 8 Hair Care, 9 Body Care, 10 Sun Care)
 const categoryPageOverrides: Partial<Record<string, Partial<MarketingPage>>> = {
   '/skincare': {
     title: 'Custom skincare',
@@ -182,6 +182,102 @@ const categoryPageOverrides: Partial<Record<string, Partial<MarketingPage>>> = {
     quote: {
       title: 'Tell us what you want to make.',
       body: 'Share your shade vision, component preferences, and target launch window. Our team will evaluate your brief and map out your next steps to production.',
+    },
+  },
+  '/sun-care': {
+    title: 'Custom UV protection',
+    accent: 'formulation and manufacturing.',
+    intro: 'End-to-end development engineered for weightless wear, broad-spectrum defense, and regional compliance.',
+    productsHeading: {
+      title: 'Sun protection solutions tailored to your brief.',
+      body: 'Formula options and filter systems scale based on your desired finish, packaging, and regional testing requirements.',
+    },
+    sections: [
+      {
+        eyebrow: 'DEVELOPMENT ROUTES',
+        title: 'Stock platform or custom development',
+        body: [
+          'A proven base formula accelerates your timeline with lower initial volumes and established UV stability data. Choosing a bespoke build gives you full control to engineer specific filter systems, skin feel, and finish around your brand vision.',
+          'We recommend the ideal approach after evaluating your product benchmarks, target market regulations, and launch timeline.',
+        ],
+      },
+      {
+        eyebrow: 'FROM BRIEF TO PRODUCT',
+        title: 'A connected manufacturing process',
+        items: [
+          { title: 'Brief & benchmark', body: 'Define your target market, SPF/PA claims, price positioning, and performance priorities.' },
+          { title: 'Formula & sample', body: 'Refine UV filter combinations, skin feel, white-cast control, and application wear.' },
+          { title: 'Pack & produce', body: 'Verify UV-protective packaging compatibility, stability testing, filling, and retail-ready assembly.' },
+        ],
+      },
+    ],
+    quote: {
+      title: 'Tell us what you want to make.',
+      body: 'Tell us about your product category, target market, estimated quantity, target price, packaging direction, and launch timeline. We’ll review your brief and map out the next steps.',
+    },
+  },
+  '/hair-care': {
+    title: 'Custom hair and scalp',
+    accent: 'formulation and manufacturing.',
+    intro: 'End-to-end development from daily cleansing and conditioning to targeted scalp and strand treatments.',
+    productsHeading: {
+      title: 'Hair and scalp solutions tailored to your brief.',
+      body: 'Formula options, viscosity, and active systems scale based on your packaging and target market requirements.',
+    },
+    sections: [
+      {
+        eyebrow: 'DEVELOPMENT ROUTES',
+        title: 'Stock platform or custom development',
+        body: [
+          'A proven base formula accelerates your launch with lower initial volumes and established stability data. Choosing a bespoke build gives you full control to tailor active complexes, rinse-off feel, and scent profiles around your brand vision.',
+          'We recommend the ideal approach after evaluating your hair-type benchmarks, packaging format, and launch timeline.',
+        ],
+      },
+      {
+        eyebrow: 'FROM BRIEF TO PRODUCT',
+        title: 'A connected manufacturing process',
+        items: [
+          { title: 'Brief & benchmark', body: 'Define your target hair and scalp concerns, price positioning, product references, and performance priorities.' },
+          { title: 'Formula & sample', body: 'Refine surfactant systems, viscosity, lather or rinse-off feel, fragrance, and conditioning results.' },
+          { title: 'Pack & produce', body: 'Verify pump or bottle dispensing compatibility, bulk filling, assembly, and retail-ready presentation.' },
+        ],
+      },
+    ],
+    quote: {
+      title: 'Tell us what you want to make.',
+      body: 'Share your hair or scalp focus, desired format, and target launch window. Our team will evaluate your brief and outline your next steps to production.',
+    },
+  },
+  '/body-care': {
+    title: 'Custom body and personal care',
+    accent: 'formulation and manufacturing.',
+    intro: 'End-to-end development engineered for rich sensory textures, signature scents, and functional packaging.',
+    productsHeading: {
+      title: 'Body and personal care solutions tailored to your brief.',
+      body: 'Formula options, rich textures, and fragrance concentrations scale based on your packaging and target market requirements.',
+    },
+    sections: [
+      {
+        eyebrow: 'DEVELOPMENT ROUTES',
+        title: 'Stock platform or custom development',
+        body: [
+          'A proven base formula accelerates your launch with lower initial volumes and established stability data. Choosing a bespoke build gives you full control to tailor emollient richness, fast-absorbing textures, and signature fragrances around your brand vision.',
+          'We recommend the ideal approach after evaluating your sensory benchmarks, packaging format, and launch timeline.',
+        ],
+      },
+      {
+        eyebrow: 'FROM BRIEF TO PRODUCT',
+        title: 'A connected manufacturing process',
+        items: [
+          { title: 'Brief & benchmark', body: 'Define your target skin concerns, price positioning, sensory benchmarks, and hydration priorities.' },
+          { title: 'Formula & sample', body: 'Refine emollient richness, spreadability, absorption rate, fragrance notes, and skin feel.' },
+          { title: 'Pack & produce', body: 'Verify pump, tube, or jar compatibility, bulk filling, assembly, and retail-ready presentation.' },
+        ],
+      },
+    ],
+    quote: {
+      title: 'Tell us what you want to make.',
+      body: 'Share your texture benchmarks, fragrance direction, and packaging preferences. Our team will evaluate your brief and outline your next steps to production.',
     },
   },
 };
