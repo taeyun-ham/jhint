@@ -118,8 +118,40 @@ const commonCategorySections: PageSection[] = [
   },
 ];
 
-// 카테고리별로 공통 틀 대신 쓸 문구(요구사항 7: Makeup)
+// 카테고리별로 공통 틀 대신 쓸 문구(요구사항 6: Skin Care, 요구사항 7: Makeup)
 const categoryPageOverrides: Partial<Record<string, Partial<MarketingPage>>> = {
+  '/skincare': {
+    title: 'Custom skincare',
+    accent: 'formulation and manufacturing.',
+    intro: 'End-to-end development for daily care, targeted treatments, and specialized formats.',
+    productsHeading: {
+      title: 'Skincare solutions tailored to your brief.',
+      body: 'Production options and capabilities scale based on your formulation, packaging, and target market requirements.',
+    },
+    sections: [
+      {
+        eyebrow: 'DEVELOPMENT ROUTES',
+        title: 'Stock platform or custom development',
+        body: [
+          'A proven base formula accelerates your timeline and accommodates lower initial volumes. Choosing a bespoke build gives you full control to tailor active ingredients, sensory texture, and performance around a distinct brand vision.',
+          'We recommend the ideal approach after evaluating your product benchmarks, commercial goals, and go-to-market timeline.',
+        ],
+      },
+      {
+        eyebrow: 'FROM BRIEF TO PRODUCT',
+        title: 'A connected manufacturing process',
+        items: [
+          { title: 'Brief & benchmark', body: 'Define your target audience, market positioning, price point, and performance goals.' },
+          { title: 'Formula & sample', body: 'Iterate on active ingredients, texture, color, scent, and overall sensory profile.' },
+          { title: 'Pack & produce', body: 'Finalize packaging compatibility, bulk production, filling, and retail-ready assembly.' },
+        ],
+      },
+    ],
+    quote: {
+      title: 'Tell us what you want to make.',
+      body: 'Submit your initial product concept, target timeline, and estimated volume. Our team will evaluate your brief and outline a clear path to production.',
+    },
+  },
   '/makeup': {
     title: 'Custom color cosmetics',
     accent: 'formulation and manufacturing.',
