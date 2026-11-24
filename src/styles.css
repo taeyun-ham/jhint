@@ -202,23 +202,15 @@ img { max-width: 100%; }
 .location-hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(244,246,246,.88), rgba(244,246,246,.56) 47%, rgba(244,246,246,0) 75%); pointer-events: none; }
 .location-hero h1, .location-hero .page-intro, .location-hero .eyebrow, .location-hero .breadcrumbs { position: relative; }
 .location-hero .page-intro { max-width: 610px; margin-left: 0; }
-.location-content { padding: clamp(39px, 4.95vw, 77px) clamp(24px, 7vw, 120px); display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(24px, 4vw, 64px); background: var(--paper); }
-.location-details { display: flex; flex-direction: column; align-items: flex-start; }
-.location-details > svg { margin: 20px 0 28px; color: #7a929e; }
-.location-details h2 { margin: 0 0 30px; font-size: clamp(38px, 4vw, 65px); letter-spacing: -.06em; }
-.location-details address { display: flex; flex-direction: column; gap: 13px; font-size: clamp(17px, 1.5vw, 23px); font-style: normal; line-height: 1.55; }
-.location-details address strong { font-weight: 650; }
-.location-details address span, .location-details > p:not(.eyebrow) { color: #5b656a; }
-.location-details > p:not(.eyebrow) { max-width: 470px; margin: 48px 0 30px; line-height: 1.65; }
+/* 방문 안내 묶음: 첫 화면 page-intro 아래(지도 배경 왼쪽 밝은 쪽 안) */
+.location-hero .location-visit { position: relative; max-width: 560px; margin-top: clamp(28px, 3vw, 44px); padding-top: clamp(24px, 2.6vw, 36px); border-top: 1px solid var(--line); }
+.location-hero .location-note { max-width: 470px; margin: 0 0 26px; color: #5b656a; font-size: clamp(15px, 1.1vw, 17px); line-height: 1.65; }
+.location-hero .location-qr { width: 120px; }
 .location-contact { display: flex; align-items: center; gap: 28px; }
 .location-contact > div { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
 .location-whatsapp { color: #5b656a; font-size: 14px; letter-spacing: .02em; }
 .location-whatsapp a { color: var(--ink); font-weight: 650; border-bottom: 1px solid currentColor; }
 .location-qr { width: 132px; height: auto; padding: 8px; background: #fff; border: 1px solid #d9e0e3; }
-.location-map { min-width: 0; }
-.location-map iframe { width: 100%; min-height: 360px; display: block; border: 0; background: #c9d3d8; }
-.location-map-links { display: flex; flex-wrap: wrap; gap: 28px; padding: 25px 0; }
-.location-map-links a { display: inline-flex; align-items: center; gap: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--ink); font-size: 11px; font-weight: 700; letter-spacing: .11em; }
 .guide-hero { --page-hero-image: url('/images/editorial/korean-cosmetics-buyer-guides-hero-optimized.webp'); }
 .guide-hero.has-background::before { background-position: 69% center; }
 .guide-hero h1 { max-width: 1100px; }
@@ -445,8 +437,7 @@ img { max-width: 100%; }
   .compliance-standards section, .compliance-standards section:last-child { min-height: 0; }
   .compliance-governance li { grid-template-columns: 44px 1fr; }
   .compliance-review section, .compliance-review section:last-child { grid-column: auto; min-height: 205px; }
-  .home-hero, .category-section, .journey-section, .rnd-section, .trust-section, .quote-band, .guide-promo, .location-content, .positioning-section > div, .format-section, .editorial-section, .inquiry-hero { grid-template-columns: 1fr; }
-  .location-map iframe { min-height: 60vw; }
+  .home-hero, .category-section, .journey-section, .rnd-section, .trust-section, .quote-band, .guide-promo, .positioning-section > div, .format-section, .editorial-section, .inquiry-hero { grid-template-columns: 1fr; }
   .guide-item summary { grid-template-columns: 30px 1fr 22px; gap: 14px; padding: 20px 0; }
   .guide-body { padding: 0 0 32px; }
   .home-hero-copy { min-height: 0; padding-block: 36px; }
@@ -515,6 +506,11 @@ img { max-width: 100%; }
   .page-hero.has-background::after { background: linear-gradient(180deg, var(--paper) 0%, var(--paper) 55%, rgba(244,242,237,.9) 66%, rgba(244,242,237,0) 85%); }
   .location-hero { padding-bottom: calc(42vw + 24px); }
   .location-hero::before { height: 42vw; }
+  /* 폰: 문구 → 버튼(전체 폭) → 번호 → QR(140px, 이 페이지는 숨기지 않음) */
+  .location-hero .location-visit { max-width: none; }
+  .location-hero .location-contact { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .location-hero .location-contact > div, .location-hero .location-contact .button { width: 100%; }
+  .location-hero .location-qr { display: block; width: 140px; }
   .related-links > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .related-links a { min-width: 0; padding: 16px; gap: 8px; font-size: 13px; }
   .related-links a svg { flex-shrink: 0; }
