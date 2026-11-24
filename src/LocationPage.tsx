@@ -1,10 +1,6 @@
-import { ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Breadcrumbs, SiteLayout, usePageMeta } from "./SiteChrome";
 
-const koreanAddress = "인천시 연수구 송도미래로 30 D-1311";
-const englishAddress =
-  "D-1311, 30 Songdo Mirae-ro, Yeonsu-gu, Incheon, Republic of Korea";
-const mapQuery = encodeURIComponent("인천광역시 연수구 송도미래로 30");
 const whatsappUrl = "https://wa.me/821079706252";
 
 export default function LocationPage() {
@@ -39,21 +35,9 @@ export default function LocationPage() {
             <em>in Korea.</em>
           </h1>
           <p className="page-intro">We're located in Incheon, Korea.</p>
-        </header>
-
-        <section
-          className="location-content"
-          aria-labelledby="location-heading"
-        >
-          <div className="location-details">
-            <p className="eyebrow">COMPANY ADDRESS</p>
-            <MapPin size={32} strokeWidth={1.4} aria-hidden="true" />
-            <h2 id="location-heading">JH International</h2>
-            <address>
-              <strong>{koreanAddress}</strong>
-              <span>{englishAddress}</span>
-            </address>
-            <p>
+          {/* 방문 안내를 첫 화면에 둠(2026-11-24 두 번째 섹션 없앰) */}
+          <div className="location-visit">
+            <p className="location-note">
               Our office operates by appointment only. Please contact JH
               International in advance to arrange a meeting.
             </p>
@@ -74,7 +58,6 @@ export default function LocationPage() {
                   </a>
                 </span>
               </div>
-              {/* QR은 PC에서만 보임(폰은 버튼으로 바로 연결) */}
               <img
                 className="location-qr"
                 src="/images/contact/jh-international-whatsapp-qr.png"
@@ -85,31 +68,7 @@ export default function LocationPage() {
               />
             </div>
           </div>
-          <div className="location-map">
-            <iframe
-              title="Map showing 30 Songdo Mirae-ro, Yeonsu-gu, Incheon"
-              src={`https://maps.google.com/maps?q=${mapQuery}&hl=en&output=embed`}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-            <div className="location-map-links">
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                OPEN IN GOOGLE MAPS <ArrowUpRight size={17} />
-              </a>
-              <a
-                href={`https://map.naver.com/p/search/${mapQuery}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                OPEN IN NAVER MAP <ArrowUpRight size={17} />
-              </a>
-            </div>
-          </div>
-        </section>
+        </header>
       </article>
     </SiteLayout>
   );
