@@ -14,3 +14,22 @@
 /guides/launch-cosmetic-brand-korea/ /guides#launch-cosmetic-brand-korea 301
 /guides/cosmetic-manufacturing-cost/ /guides#cosmetic-manufacturing-cost 301
 /guides/cosmetic-development-timeline/ /guides#cosmetic-development-timeline 301
+
+# 끝 슬래시 주소 → 슬래시 없는 주소 301(기본 동작은 307, 2026-11-25)
+/export/ /export 301
+/about/ /about 301
+/oem-odm/ /oem-odm 301
+/skincare/ /skincare 301
+/makeup/ /makeup 301
+/sun-care/ /sun-care 301
+/hair-care/ /hair-care 301
+/body-care/ /body-care 301
+/formulation/ /formulation 301
+/packaging/ /packaging 301
+/moq/ /moq 301
+/process/ /process 301
+/compliance/ /compliance 301
+/faq/ /faq 301
+/inquiry/ /inquiry 301
+/location/ /location 301
+/guides/ /guides 301
