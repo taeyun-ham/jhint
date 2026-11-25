@@ -364,7 +364,7 @@ export const marketingPages: MarketingPage[] = [
     title: 'Choose the development route',
     accent: 'that fits your brand.',
     intro: 'OEM and ODM describe different levels of product ownership and development support. We help international buyers define the right route before quotation.',
-    metaTitle: 'Korean Cosmetics OEM & ODM Manufacturer | JH International',
+    metaTitle: 'Cosmetics OEM, ODM & Private Label Development | JH International',
     metaDescription: 'Understand Korean cosmetics OEM, ODM and private-label development with JH International, from formula and samples to packaging, filling and export.',
     sections: [
       {
