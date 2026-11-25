@@ -13,7 +13,7 @@ export const seoPages: Record<string, { title: string; description: string }> = 
     "description": "Meet JH International, a Korean cosmetics OEM and ODM manufacturing partner supporting international beauty brands from concept to finished product."
   },
   "/oem-odm": {
-    "title": "Korean Cosmetics OEM & ODM Manufacturer | JH International",
+    "title": "Cosmetics OEM, ODM & Private Label Development | JH International",
     "description": "Korean cosmetics OEM, ODM and private-label development with JH International: formulas, samples, packaging, filling, manufacturing and export preparation."
   },
   "/skincare": {
