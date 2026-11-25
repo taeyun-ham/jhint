@@ -205,6 +205,7 @@ export function FaqPage() {
 }
 
 export function NotFoundPage() {
-  usePageMeta('Page Not Found | JH International', 'The requested page could not be found.', window.location.pathname);
+  // 경로는 '/404' 고정(prerender가 dist/404.html로 만들고, 없는 주소에 404 상태로 나감)
+  usePageMeta('Page Not Found | JH International', 'The requested page could not be found.', '/404');
   return <SiteLayout><section className="not-found"><span>404</span><h1>We could not find that page.</h1><p>Return to the manufacturing knowledge base or start a product inquiry.</p><div><a className="button dark" href="/">BACK TO HOME</a><a className="text-link" href="/inquiry">REQUEST A QUOTE <ArrowUpRight size={16} /></a></div></section></SiteLayout>;
 }
