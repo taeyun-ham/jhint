@@ -32,6 +32,21 @@ try {
     await writeFile(join(directory, 'index.html'), page);
     console.log(path + ': description ' + description.length + ' characters; body rendered');
   }
+  // 없는 주소용 404 페이지(wrangler not_found_handling "404-page"). 검색에 안 잡히게 noindex, canonical·og:url 없음
+  const { html: notFoundHtml, metadata: notFound } = render('/404');
+  const notFoundPage = template
+    .replace(/<title>[\s\S]*?<\/title>/, '<title>' + escape(notFound.title) + '</title>')
+    .replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?>/, '<meta name="description" content="' + escape(notFound.description) + '" />')
+    .replace(/<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/, '<meta name="robots" content="noindex,follow" />')
+    .replace(/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/, '<meta property="og:title" content="' + escape(notFound.title) + '" />')
+    .replace(/<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/, '<meta property="og:description" content="' + escape(notFound.description) + '" />')
+    .replace(/\s*<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/, '')
+    .replace(/\s*<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/, '')
+    .replace(/<script id="page-schema" type="application\/ld\+json">[\s\S]*?<\/script>/, '')
+    .replace('<div id="root"></div>', () => '<div id="root">' + notFoundHtml + '</div>');
+  if (!notFoundPage.includes('noindex')) throw new Error('/404: robots noindex not applied');
+  await writeFile('dist/404.html', notFoundPage);
+  console.log('/404: dist/404.html rendered');
 } finally {
   await rm(serverDir, { recursive: true, force: true });
 }

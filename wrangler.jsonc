@@ -7,7 +7,8 @@
     "directory": "./dist",
     "binding": "ASSETS",
     "html_handling": "drop-trailing-slash",
-    "not_found_handling": "single-page-application",
+    // 없는 주소는 dist/404.html을 404 상태로(전에는 홈을 200으로 → 구글 Soft 404, 2026-11-25)
+    "not_found_handling": "404-page",
     "run_worker_first": ["/api/*"],
   },
   "observability": { "enabled": true },
